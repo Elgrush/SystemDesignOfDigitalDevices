@@ -9,5 +9,6 @@ module noise_gen (clk, enable, Q);
             counter = counter + 1'b1;
     
     assign Q = {{10{counter[2]}}, counter, 11'd0};
+	 //assign Q = '1;
 
 endmodule

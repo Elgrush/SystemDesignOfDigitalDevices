@@ -19,25 +19,31 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	
 	// Сигналы управления
 	wire reset = ~KEY[0];
-	wire switch_channel = KEY[1];
-	wire noise_enable = KEY[2];
-	wire record_button = KEY[3];
-	wire play_button = SW[0];
+	wire switch_channel = 0;
+	wire noise_enable = ~KEY[1];
+	wire record_button = ~KEY[2];
+	wire play_button = ~KEY[3];
 	wire noise_enable_sw = SW[9];
-	
+	//assign LEDR[0] = switch_channel;
+	assign LEDR[1] = noise_enable;
+	assign LEDR[2] = record_button;
+	assign LEDR[4] = playing;
+	assign LEDR[5] = recording;
+	assign LEDR[6] = play_button;
+	assign LEDR[7] = noise_enable_sw;
 	// Сигналы диктофона
 	wire [23:0] noise;
 	wire [23:0] recorded_left, recorded_right;
 	wire recording, playing;
 	wire memory_full = LEDR[9];
 	
-	noise_generator ng(CLOCK_50,noise_enable_sw, noise);
+	noise_gen ng(CLOCK_50,noise_enable_sw, noise);
 	
 	reg [23:0] left_out;
 	reg [23:0] right_out;
 	
 	
-	always @(*) begin
+	always_comb begin
 		if (playing) begin
 			// Режим воспроизведения записи
 			left_out = recorded_left;
@@ -48,12 +54,13 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 			right_out = readdata_right;
 		end else begin
 			// Обычный режим с эффектами
+			
 			if (switch_channel) begin
-				left_out = noise_enable ? (readdata_left + noise) : readdata_left;
-				right_out = noise_enable ? (readdata_right + noise) : readdata_right;
+				left_out = noise_enable ? (readdata_left | noise) : readdata_left;
+				right_out = noise_enable ? (readdata_right | noise) : readdata_right;
 			end else begin
-				right_out = noise_enable ? (readdata_left + noise) : readdata_left;
-				left_out = noise_enable ? (readdata_right + noise) : readdata_right;
+				right_out = noise_enable ? (readdata_left | noise) : readdata_left;
+				left_out = noise_enable ? (readdata_right | noise) : readdata_right;
 			end
 		end
 	end
@@ -63,11 +70,11 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	
 	assign writedata_left =  left_out;
 	assign writedata_right = right_out;
-	assign read = write_ready && read_ready;
-	assign write = write_ready && read_ready;
+	assign read = read_ready;
+	assign write = write_ready;
 
 	dictaphone dictaphone_unit(
-		.clk(CLOCK_50),
+		.clk(FPGA_I2C_SCLK),
 		.reset(reset),
 		.record_btn(record_button),
 		.play_btn(play_button),
@@ -84,7 +91,7 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	
 	clock_generator my_clock_gen(
 		// inputs
-		CLOCK2_50,
+		CLOCK_50,
 		reset,
 
 		// outputs
