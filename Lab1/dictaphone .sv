@@ -1,108 +1,115 @@
-module dictaphone(
-	input clk,
-	input reset,
-	input record_btn,
-	input play_btn,
-	input [23:0] audio_in_left,
-	input [23:0] audio_in_right,
-	input read_ready,
-	input write_ready,
-	output reg [23:0] audio_out_left,
-	output reg [23:0] audio_out_right,
-	output reg recording,
-	output reg playing,
-	output memory_full
+module dictaphone #(
+	parameter MEMORY_SIZE = 4096  // Размер памяти (можно настроить)
+)(
+	input logic clk,
+	input logic reset,
+	input logic record_btn,
+	input logic stop_record_btn,
+	input logic play_btn,
+	input logic stop_play_btn,
+	input logic [23:0] audio_in_left,
+	input logic [23:0] audio_in_right,
+	input logic read_ready,
+	input logic write_ready,
+	output logic playing,
+	output logic recording,
+	output logic audio_out_left,
+	output logic audio_out_right
 );
 	
 	// Параметры памяти
-	parameter MEMORY_SIZE = 15000;  // Размер памяти (можно настроить)
-	
+	localparam MEMORY_WIDTH = $clog2(MEMORY_SIZE);
+
 	// Память для записи
 	logic [23:0] memory_left [MEMORY_SIZE];
 	logic [23:0] memory_right [MEMORY_SIZE];
 	
 	// Указатели записи/воспроизведения
-	logic [15:0] write_pointer = 0;
-	logic [15:0] read_pointer = 0;
-	logic [15:0] record_length = 0;
-	
+	logic [MEMORY_WIDTH-1:0] write_pointer;
+	logic [MEMORY_WIDTH-1:0] read_pointer;
+	logic [MEMORY_WIDTH-1:0] record_length;
+
 	// Состояния конечного автомата
-	enum {IDLE, RECORDING_STATE, PLAYING_STATE} state;
-	
-	// Обнаружение фронтов кнопок
-	logic record_btn_prev, play_btn_prev;
-	logic record_pulse, play_pulse;
-	
-	assign record_pulse = record_btn & ~record_btn_prev;
-	assign play_pulse = play_btn & ~play_btn_prev;
-	assign memory_full = (write_pointer >= MEMORY_SIZE);
-	
+	enum {IDLE, RECORDING_STATE, PLAYING_STATE} state, next_state;
+	assign recording = state == RECORDING_STATE;
+	assign playing   = state == PLAYING_STATE;
+
 	always_ff @(posedge clk or posedge reset) begin
 		if (reset) begin
-			record_btn_prev <= 0;
-			play_btn_prev <= 0;
+			state <= IDLE;
 		end else begin
-			record_btn_prev <= record_btn;
-			play_btn_prev <= play_btn;
+			state <= next_state;
 		end
+	end
+
+	always_comb begin
+		case (state)
+			IDLE: begin
+				next_state = IDLE;
+				if (record_btn && !stop_record_btn) begin
+					next_state = RECORDING_STATE;
+				end else if (play_btn && !stop_play_btn) begin
+					next_state = PLAYING_STATE;
+				end
+			end
+			
+			RECORDING_STATE: begin
+				next_state = RECORDING_STATE;
+				if (stop_record_btn || write_pointer >= (MEMORY_SIZE-1'b1)) begin
+					next_state = IDLE;
+				end
+			end
+			
+			PLAYING_STATE: begin
+				next_state = PLAYING_STATE;
+				if (stop_play_btn) begin
+					next_state = IDLE;
+				end
+			end
+		endcase
 	end
 	
 	// Конечный автомат управления
 	always @(posedge clk or posedge reset) begin
 		if (reset) begin
-			state <= IDLE;
-			write_pointer <= '0;
-			read_pointer <= '0;
-			record_length <= '0;
-			recording <= '0;
-			playing <= '0;
-			audio_out_left <= '0;
+			write_pointer   <= '0;
+			read_pointer    <= '0;
+			audio_out_left  <= '0;
 			audio_out_right <= '0;
 		end else begin
+			audio_out_left  <= '0;
+			audio_out_right <= '0;
 			case (state)
 				IDLE: begin
-					if (record_pulse && !memory_full) begin
-						state <= RECORDING_STATE;
-						write_pointer <= '0;
-						recording <= '1;
-						playing <= '0;
-					end else if (play_pulse && record_length > '0) begin
-						state <= PLAYING_STATE;
-						read_pointer <= '0;
-						playing <= '1;
-						recording <= '0;
+					case(next_state)
+						RECORDING_STATE: begin
+							write_pointer <= '0;
+						end
+						PLAYING_STATE: begin
+							read_pointer <= '0;
+						end
+						default:;
+					endcase
 					end
-				end
 				
 				RECORDING_STATE: begin
 					if (read_ready && write_pointer < MEMORY_SIZE) begin
 						// Запись в память
 						memory_left[write_pointer] <= audio_in_left;
 						memory_right[write_pointer] <= audio_in_right;
-						write_pointer = write_pointer + 1'b1;
-						record_length <= write_pointer;
-					end
-					
-					if (!record_btn || memory_full) begin
-						state <= IDLE;
-						recording <= 0;
+						write_pointer <= write_pointer + 1'b1;
 					end
 				end
 				
 				PLAYING_STATE: begin
-					if (write_ready && read_pointer < record_length) begin
+					if (write_ready && read_pointer < write_pointer) begin
 						// Воспроизведение из памяти
-						audio_out_left <= memory_left[read_pointer];
+						audio_out_left  <= memory_left[read_pointer];
 						audio_out_right <= memory_right[read_pointer];
 						read_pointer <= read_pointer + 1;
-					end else if (read_pointer >= record_length) begin
+					end else if (read_pointer >= write_pointer) begin
 						// Циклическое воспроизведение
-						read_pointer <= 0;
-					end
-					
-					if (!play_btn) begin
-						state <= IDLE;
-						playing <= 0;
+						read_pointer <= '0;
 					end
 				end
 			endcase

@@ -13,29 +13,32 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	output [9:0] LEDR;
 	
 	// Основные сигналы аудио
-	wire read_ready, write_ready, read, write;
-	wire [23:0] readdata_left, readdata_right;
-	wire [23:0] writedata_left, writedata_right;
+	logic read_ready, write_ready, read, write;
+	logic [23:0] readdata_left, readdata_right;
+	logic [23:0] writedata_left, writedata_right;
 	
 	// Сигналы управления
 	wire reset = ~KEY[0];
-	wire switch_channel = 0;
-	wire noise_enable = ~KEY[1];
-	wire record_button = ~KEY[2];
-	wire play_button = ~KEY[3];
+	wire switch_channel = SW[0];
+	wire noise_enable = SW[1];
+	wire record_button = SW[2];
+	wire stop_record_button = SW[3];
+	wire play_button = SW[4];
+	wire stop_play_button = SW[5];
 	wire noise_enable_sw = SW[9];
-	//assign LEDR[0] = switch_channel;
+	assign LEDR[0] = switch_channel;
 	assign LEDR[1] = noise_enable;
 	assign LEDR[2] = record_button;
 	assign LEDR[4] = playing;
 	assign LEDR[5] = recording;
-	assign LEDR[6] = play_button;
-	assign LEDR[7] = noise_enable_sw;
+	assign LEDR[6] = record_button;
+	assign LEDR[7] = stop_record_button;
+	assign LEDR[8] = play_button;
+	assign LEDR[9] = stop_play_button;
 	// Сигналы диктофона
-	wire [23:0] noise;
-	wire [23:0] recorded_left, recorded_right;
-	wire recording, playing;
-	wire memory_full = LEDR[9];
+	logic [23:0] noise;
+	logic [23:0] recorded_left, recorded_right;
+	logic recording, playing;
 	
 	noise_gen ng(CLOCK_50,noise_enable_sw, noise);
 	
@@ -73,11 +76,14 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	assign read = read_ready;
 	assign write = write_ready;
 
-	dictaphone dictaphone_unit(
+	dictaphone #(.MEMORY_SIZE(15000)
+	) dictaphone_unit(
 		.clk(FPGA_I2C_SCLK),
 		.reset(reset),
 		.record_btn(record_button),
+		.stop_record_btn(stop_record_button),
 		.play_btn(play_button),
+		.stop_play_btn(stop_play_button),
 		.audio_in_left(readdata_left),
 		.audio_in_right(readdata_right),
 		.read_ready(read_ready),
@@ -86,7 +92,6 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		.audio_out_right(recorded_right),
 		.recording(recording),
 		.playing(playing),
-		.memory_full(memory_full),
 	);
 	
 	clock_generator my_clock_gen(
