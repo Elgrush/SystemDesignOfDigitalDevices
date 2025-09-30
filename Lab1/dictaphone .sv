@@ -13,8 +13,9 @@ module dictaphone #(
 	input logic write_ready,
 	output logic playing,
 	output logic recording,
-	output logic audio_out_left,
-	output logic audio_out_right
+	output logic [23:0] audio_out_left,
+	output logic [23:0] audio_out_right,
+	output logic audio_out_of_memory
 );
 	
 	// Параметры памяти
@@ -30,9 +31,9 @@ module dictaphone #(
 	logic [MEMORY_WIDTH-1:0] record_length;
 
 	// Состояния конечного автомата
-	enum {IDLE, RECORDING_STATE, PLAYING_STATE} state, next_state;
-	assign recording = state == RECORDING_STATE;
-	assign playing   = state == PLAYING_STATE;
+	enum logic [1:0] {IDLE, RECORDING_STATE, PLAYING_STATE} state, next_state;
+	assign recording = (state == RECORDING_STATE);
+	assign playing   = (state == PLAYING_STATE);
 
 	always_ff @(posedge clk or posedge reset) begin
 		if (reset) begin
@@ -76,11 +77,12 @@ module dictaphone #(
 			read_pointer    <= '0;
 			audio_out_left  <= '0;
 			audio_out_right <= '0;
+			audio_out_of_memory <= '0;
 		end else begin
-			audio_out_left  <= '0;
-			audio_out_right <= '0;
 			case (state)
 				IDLE: begin
+					audio_out_left  <= '0;
+					audio_out_right <= '0;
 					case(next_state)
 						RECORDING_STATE: begin
 							write_pointer <= '0;
@@ -98,6 +100,8 @@ module dictaphone #(
 						memory_left[write_pointer] <= audio_in_left;
 						memory_right[write_pointer] <= audio_in_right;
 						write_pointer <= write_pointer + 1'b1;
+					end else begin
+						audio_out_of_memory <= 1'b1;
 					end
 				end
 				
@@ -106,7 +110,7 @@ module dictaphone #(
 						// Воспроизведение из памяти
 						audio_out_left  <= memory_left[read_pointer];
 						audio_out_right <= memory_right[read_pointer];
-						read_pointer <= read_pointer + 1;
+						read_pointer <= read_pointer + 1'b1;
 					end else if (read_pointer >= write_pointer) begin
 						// Циклическое воспроизведение
 						read_pointer <= '0;
