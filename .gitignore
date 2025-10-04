@@ -4,3 +4,5 @@ output_files
 c5_pin_model_dump.txt
 
 *.bak
+*.qws
+*.zip
