@@ -28,9 +28,8 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	wire noise_enable_sw = SW[9];
 	assign LEDR[0] = switch_channel;
 	assign LEDR[1] = noise_enable;
-	assign LEDR[2] = record_button;
-	assign LEDR[4] = playing;
-	assign LEDR[5] = recording;
+	assign LEDR[2] = playing;
+	assign LEDR[3] = recording;
 	assign LEDR[6] = record_button;
 	assign LEDR[7] = stop_record_button;
 	assign LEDR[8] = play_button;
@@ -40,7 +39,7 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	logic [23:0] recorded_left, recorded_right;
 	logic recording, playing;
 	
-	noise_gen ng(CLOCK_50,noise_enable_sw, noise);
+	noise_gen ng(AUD_BCLK,noise_enable_sw, noise);
 	
 	reg [23:0] left_out;
 	reg [23:0] right_out;
@@ -75,10 +74,14 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	assign writedata_right = right_out;
 	assign read = read_ready;
 	assign write = write_ready;
+	
+	logic dict_clk;
+	
+	FrequencySplitter #(.N(1)) fs(.clk_in(FPGA_I2C_SCLK), .clk_out(dict_clk), .rst_n(!reset));
 
-	dictaphone #(.MEMORY_SIZE(15000)
+	dictaphone #(.MEMORY_SIZE(80000)
 	) dictaphone_unit(
-		.clk(FPGA_I2C_SCLK),
+		.clk(AUD_BCLK),
 		.reset(reset),
 		.record_btn(record_button),
 		.stop_record_btn(stop_record_button),
@@ -92,6 +95,7 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		.audio_out_right(recorded_right),
 		.recording(recording),
 		.playing(playing),
+		.audio_out_of_memory(LEDR[4]),
 	);
 	
 	clock_generator my_clock_gen(
