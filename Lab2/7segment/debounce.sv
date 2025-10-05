@@ -5,7 +5,9 @@ module debounce(
 	);
 	
 	always_latch begin : blockName
-		button_out <= button_in;
+		if (clk_in) begin
+			button_out <= button_in;
+		end
 	end
 	
 endmodule
