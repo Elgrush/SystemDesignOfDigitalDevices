@@ -36,7 +36,7 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module img_data (
+module img_data #(parameter PATH = "../VGA_DATA/img_data_logo.mif") (
 	address,
 	clock,
 	q);
@@ -83,7 +83,7 @@ module img_data (
 		altsyncram_component.address_aclr_a = "NONE",
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "../VGA_DATA/img_data_logo.mif",
+		altsyncram_component.init_file = PATH,
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",

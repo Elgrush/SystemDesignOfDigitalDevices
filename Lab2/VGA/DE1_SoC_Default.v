@@ -280,10 +280,10 @@ always@(posedge CLOCK_50)
 
 
 assign	LEDR      	=	KEY[0]? {	Cont[25:24],Cont[25:24],Cont[25:24],Cont[25:24],Cont[25:24]	}:10'h3ff;
-assign	mSEG7_DIG	=	KEY[0]? {	Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24] } :{6{4'b1000}};
+//assign	mSEG7_DIG	=	KEY[0]? {	Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24],Cont[27:24] } :{6{4'b1000}};
 
 //7 segment LUT
-
+/*
 SEG7_LUT_6 			u0	(	.oSEG0(HEX0),
 							   .oSEG1(HEX1),
 							   .oSEG2(HEX2),
@@ -291,7 +291,21 @@ SEG7_LUT_6 			u0	(	.oSEG0(HEX0),
 								.oSEG4(HEX4),
 								.oSEG5(HEX5),
 							   .iDIG(mSEG7_DIG) );
+*/
 
+bin_seg7_con hex_out_0 (
+      .in(0),
+      .out(HEX0)
+);
+
+bin_seg7_con hex_out_1 (
+      .in(4'hA),
+      .out(HEX1)
+);
+bin_seg7_con hex_out_2 (
+      .in(4'hB),
+      .out(HEX2)
+);
 //	Reset Delay Timer
 Reset_Delay			r0	(	
 							 .iCLK(CLOCK_50),
@@ -312,6 +326,7 @@ VGA_Audio u1(
 assign VGA_CLK = VGA_CTRL_CLK;
 vga_controller vga_ins(.iRST_n(DLY_RST),
                       .iVGA_CLK(VGA_CTRL_CLK),
+							 .switch(KEY[3]),
                       .oBLANK_n(VGA_BLANK_N),
                       .oHS(VGA_HS),
                       .oVS(VGA_VS),

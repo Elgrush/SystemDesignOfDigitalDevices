@@ -1,45 +1,45 @@
 ------------------------------------------------------------
-TimeQuest Timing Analyzer Summary
+Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 9.980
+Slack : 8.283
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'clock_50_0'
-Slack : 16.284
+Slack : 14.434
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 52.056
+Slack : 52.526
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.367
+Slack : 0.310
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clock_50_0'
-Slack : 0.381
+Slack : 0.384
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.433
+Slack : 0.443
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.029
-TNS   : -30.405
+Slack : -2.009
+TNS   : -28.088
 
 Type  : Slow 1100mV 85C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 11.730
+Slack : 13.175
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.716
+Slack : 0.708
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 2.458
+Slack : 1.229
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -47,55 +47,55 @@ Slack : 1.111
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50_0'
-Slack : 8.824
+Slack : 8.489
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.765
+Slack : 18.759
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 27.069
+Slack : 27.059
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 10.184
+Slack : 8.533
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'clock_50_0'
-Slack : 16.094
+Slack : 14.202
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 52.170
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'clock_50_0'
-Slack : 0.381
+Slack : 52.567
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.393
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clock_50_0'
+Slack : 0.394
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.444
+Slack : 0.429
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -1.947
-TNS   : -29.180
+Slack : -1.942
+TNS   : -27.151
 
 Type  : Slow 1100mV 0C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 11.952
+Slack : 13.348
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.759
+Slack : 0.750
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 2.567
+Slack : 1.348
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -103,55 +103,55 @@ Slack : 1.111
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50_0'
-Slack : 8.791
+Slack : 8.458
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.737
+Slack : 18.738
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 27.012
+Slack : 27.019
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 13.461
+Slack : 12.201
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'clock_50_0'
-Slack : 17.772
+Slack : 16.216
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 53.396
+Slack : 53.847
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clock_50_0'
 Slack : 0.185
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Type  : Fast 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
 Slack : 0.199
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.249
+Type  : Fast 1100mV 85C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.302
-TNS   : -4.521
+Slack : -0.284
+TNS   : -3.960
 
 Type  : Fast 1100mV 85C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 14.315
+Slack : 15.451
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.541
+Slack : 0.525
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 1.780
+Slack : 0.896
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -159,55 +159,55 @@ Slack : 1.111
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50_0'
-Slack : 8.746
+Slack : 8.508
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.880
+Slack : 18.879
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 27.326
+Slack : 27.317
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 14.099
+Slack : 13.011
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clock_50_0'
-Slack : 17.820
+Slack : 16.405
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 53.609
+Slack : 53.984
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clock_50_0'
-Slack : 0.176
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.189
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.237
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.195
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.211
-TNS   : -3.152
+Slack : -0.197
+TNS   : -2.745
 
 Type  : Fast 1100mV 0C Model Recovery 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 14.845
+Slack : 15.829
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.510
+Slack : 0.497
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 1.645
+Slack : 0.840
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -215,7 +215,7 @@ Slack : 1.111
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50_0'
-Slack : 8.710
+Slack : 8.482
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
@@ -223,7 +223,7 @@ Slack : 18.881
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u1|vga_audio_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 27.314
+Slack : 27.312
 TNS   : 0.000
 
 ------------------------------------------------------------

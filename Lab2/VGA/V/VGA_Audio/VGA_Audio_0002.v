@@ -25,13 +25,13 @@ module  VGA_Audio_0002(
 		.reference_clock_frequency("50.0 MHz"),
 		.operation_mode("normal"),
 		.number_of_clocks(3),
-		.output_clock_frequency0("25.0 MHz"),
+		.output_clock_frequency0("25.000000 MHz"),
 		.phase_shift0("0 ps"),
 		.duty_cycle0(50),
-		.output_clock_frequency1("18.0 MHz"),
+		.output_clock_frequency1("18.000000 MHz"),
 		.phase_shift1("0 ps"),
 		.duty_cycle1(50),
-		.output_clock_frequency2("25.0 MHz"),
+		.output_clock_frequency2("25.000000 MHz"),
 		.phase_shift2("30000 ps"),
 		.duty_cycle2(50),
 		.output_clock_frequency3("0 MHz"),
@@ -82,11 +82,11 @@ module  VGA_Audio_0002(
 		.pll_type("General"),
 		.pll_subtype("General")
 	) altera_pll_i (
+		.rst	(rst),
 		.outclk	({outclk_2, outclk_1, outclk_0}),
 		.locked	(locked),
 		.fboutclk	( ),
 		.fbclk	(1'b0),
-		.rst	(rst),
 		.refclk	(refclk)
 	);
 endmodule

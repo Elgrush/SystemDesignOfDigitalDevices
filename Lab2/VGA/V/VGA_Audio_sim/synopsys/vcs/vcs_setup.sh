@@ -1,5 +1,5 @@
 
-# (C) 2001-2013 Altera Corporation. All rights reserved.
+# (C) 2001-2025 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and 
 # other software and tools, and its AMPP partner logic functions, and 
 # any output files any of the foregoing (including device programming 
@@ -12,18 +12,95 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 13.0dp 156.2 win32 2013.08.09.14:34:47
+# ACDS 24.1 1077 linux 2025.10.08.13:00:12
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
 
 # ----------------------------------------
+# This script provides commands to simulate the following IP detected in
+# your Quartus project:
+#     VGA_Audio
+# 
+# Altera recommends that you source this Quartus-generated IP simulation
+# script from your own customized top-level script, and avoid editing this
+# generated script.
+# 
+# To write a top-level shell script that compiles Altera simulation libraries
+# and the Quartus-generated IP in your project, along with your design and
+# testbench files, follow the guidelines below.
+# 
+# 1) Copy the shell script text from the TOP-LEVEL TEMPLATE section
+# below into a new file, e.g. named "vcs_sim.sh".
+# 
+# 2) Copy the text from the DESIGN FILE LIST & OPTIONS TEMPLATE section into
+# a separate file, e.g. named "filelist.f".
+# 
+# ----------------------------------------
+# # TOP-LEVEL TEMPLATE - BEGIN
+# #
+# # TOP_LEVEL_NAME is used in the Quartus-generated IP simulation script to
+# # set the top-level simulation or testbench module/entity name.
+# #
+# # QSYS_SIMDIR is used in the Quartus-generated IP simulation script to
+# # construct paths to the files required to simulate the IP in your Quartus
+# # project. By default, the IP script assumes that you are launching the
+# # simulator from the IP script location. If launching from another
+# # location, set QSYS_SIMDIR to the output directory you specified when you
+# # generated the IP script, relative to the directory from which you launch
+# # the simulator.
+# #
+# # Source the Quartus-generated IP simulation script and do the following:
+# # - Compile the Quartus EDA simulation library and IP simulation files.
+# # - Specify TOP_LEVEL_NAME and QSYS_SIMDIR.
+# # - Compile the design and top-level simulation module/entity using
+# #   information specified in "filelist.f".
+# # - Override the default USER_DEFINED_SIM_OPTIONS. For example, to run
+# #   until $finish(), set to an empty string: USER_DEFINED_SIM_OPTIONS="".
+# # - Run the simulation.
+# #
+# source <script generation output directory>/synopsys/vcs/vcs_setup.sh \
+# TOP_LEVEL_NAME=<simulation top> \
+# QSYS_SIMDIR=<script generation output directory> \
+# USER_DEFINED_ELAB_OPTIONS="\"-f filelist.f\"" \
+# USER_DEFINED_SIM_OPTIONS=<simulation options for your design>
+# #
+# # TOP-LEVEL TEMPLATE - END
+# ----------------------------------------
+# 
+# ----------------------------------------
+# # DESIGN FILE LIST & OPTIONS TEMPLATE - BEGIN
+# #
+# # Compile all design files and testbench files, including the top level.
+# # (These are all the files required for simulation other than the files
+# # compiled by the Quartus-generated IP simulation script)
+# #
+# +systemverilogext+.sv
+# <design and testbench files, compile-time options, elaboration options>
+# #
+# # DESIGN FILE LIST & OPTIONS TEMPLATE - END
+# ----------------------------------------
+# 
+# IP SIMULATION SCRIPT
+# ----------------------------------------
+# If VGA_Audio is one of several IP cores in your
+# Quartus project, you can generate a simulation script
+# suitable for inclusion in your top-level simulation
+# script by running the following command line:
+# 
+# ip-setup-simulation --quartus-project=<quartus project>
+# 
+# ip-setup-simulation will discover the Altera IP
+# within the Quartus project, and generate a unified
+# script which supports all the Altera IP within the design.
+# ----------------------------------------
+# ACDS 24.1 1077 linux 2025.10.08.13:00:12
+# ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="VGA_Audio"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="C:/altera/13.0/quartus/"
+QUARTUS_INSTALL_DIR="/home/mich/intelFPGA_lite/24.1std/quartus/"
 SKIP_FILE_COPY=0
-SKIP_ELAB=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
 USER_DEFINED_SIM_OPTIONS="+vcs+finish+100"
@@ -31,7 +108,7 @@ USER_DEFINED_SIM_OPTIONS="+vcs+finish+100"
 # overwrite variables - DO NOT MODIFY!
 # This block evaluates each command line argument, typically used for 
 # overwriting variables. An example usage:
-#   sh <simulator>_setup.sh SKIP_ELAB=1 SKIP_SIM=1
+#   sh <simulator>_setup.sh SKIP_SIM=1
 for expression in "$@"; do
   eval $expression
   if [ $? -ne 0 ]; then
@@ -41,9 +118,19 @@ for expression in "$@"; do
 done
 
 # ----------------------------------------
+# initialize simulation properties - DO NOT MODIFY!
+ELAB_OPTIONS=""
+SIM_OPTIONS=""
+if [[ `vcs -platform` != *"amd64"* ]]; then
+  :
+else
+  :
+fi
+
+# ----------------------------------------
 # copy RAM/ROM files to simulation directory
 
-vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEFINED_ELAB_OPTIONS \
+vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/220model.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v \
@@ -61,5 +148,5 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $USER_DEF
 # ----------------------------------------
 # simulate
 if [ $SKIP_SIM -eq 0 ]; then
-  ./simv $USER_DEFINED_SIM_OPTIONS
+  ./simv $SIM_OPTIONS $USER_DEFINED_SIM_OPTIONS
 fi
