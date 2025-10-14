@@ -326,7 +326,6 @@ VGA_Audio u1(
 assign VGA_CLK = VGA_CTRL_CLK;
 vga_controller vga_ins(.iRST_n(DLY_RST),
                       .iVGA_CLK(VGA_CTRL_CLK),
-							 .switch(KEY[3]),
                       .oBLANK_n(VGA_BLANK_N),
                       .oHS(VGA_HS),
                       .oVS(VGA_VS),

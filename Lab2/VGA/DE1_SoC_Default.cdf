@@ -1,4 +1,4 @@
-/* Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition */
+/* Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("/home/mich/Desktop/SDDD/SystemDesignOfDigitalDevices/Lab2/VGA/") File("DE1_SoC_Default.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("E:/CodingSpace/SDDD/Lab2/VGA/") File("DE1_SoC_Default.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

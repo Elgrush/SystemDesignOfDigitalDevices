@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 24.1 1077 linux 2025.10.08.13:00:12
+# ACDS 17.1 590 win32 2025.10.14.12:53:43
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 24.1 1077 linux 2025.10.08.13:00:12
+# ACDS 17.1 590 win32 2025.10.14.12:53:43
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="VGA_Audio"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="/home/mich/intelFPGA_lite/24.1std/quartus/"
+QUARTUS_INSTALL_DIR="C:/intelfpga_lite/17.1/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
