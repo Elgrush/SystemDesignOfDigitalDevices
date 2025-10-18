@@ -1,0 +1,74 @@
+18:47:17 **** Incremental Build of configuration Nios II for project Lab3 ****
+make all 
+Info: Building ../Lab3_bsp/
+E:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab3_bsp/
+[BSP build complete]
+Info: Compiling AUDIO.c to obj/default/AUDIO.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/AUDIO.o AUDIO.c
+Info: Compiling I2C.c to obj/default/I2C.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/I2C.o I2C.c
+Info: Compiling LED.c to obj/default/LED.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/LED.o LED.c
+Info: Compiling SEG7.c to obj/default/SEG7.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/SEG7.o SEG7.c
+Info: Compiling debug.c to obj/default/debug.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/debug.o debug.c
+debug.c: In function 'myprintf_hex_array':
+debug.c:72:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         sprintf(szText, "[%02X]", *(pHex+i));
+                 ^
+In file included from e:\intelfpga_lite\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:29:0,
+                 from debug.c:32:
+e:\intelfpga_lite\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:258:5: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+In file included from my_includes.h:53:0,
+                 from debug.c:34:
+debug.c:73:16: warning: pointer targets in passing argument 1 of 'myprintf' differ in signedness [-Wpointer-sign]
+         DEBUG((szText));
+                ^
+debug.h:47:42: note: in definition of macro 'DEBUG'
+ #define DEBUG(x)               {myprintf x;}  // standard in/out, specifed in project (it could be uart, jtag, or lcd)
+                                          ^
+debug.c:53:5: note: expected 'char *' but argument is of type 'unsigned char *'
+ int myprintf(char *format, ...){
+     ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab3_bsp//HAL/inc -I../Lab3_bsp/ -I../Lab3_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:363:5: error: unknown type name 'alt_up_ps2_dev'
+     alt_up_ps2_dev ps2;
+     ^
+main.c:364:5: warning: implicit declaration of function 'alt_up_ps2_init' [-Wimplicit-function-declaration]
+     alt_up_ps2_init(&ps2);
+     ^
+main.c:365:5: warning: implicit declaration of function 'alt_up_ps2_enable_read_interrupt' [-Wimplicit-function-declaration]
+     alt_up_ps2_enable_read_interrupt(&ps2);
+     ^
+main.c:371:6: warning: implicit declaration of function 'alt_up_ps2_read_fd' [-Wimplicit-function-declaration]
+      alt_up_ps2_read_fd(ps2.alt_dev.read_fd, mouse_buf, sizeof(mouse_buf));
+      ^
+main.c:371:28: error: request for member 'alt_dev' in something not a structure or union
+      alt_up_ps2_read_fd(ps2.alt_dev.read_fd, mouse_buf, sizeof(mouse_buf));
+                            ^
+main.c:402:26: warning: unused variable 'bZeroCross' [-Wunused-variable]
+                     bool bZeroCross = ui_is_dac_zero_cross();
+                          ^
+main.c:436:42: warning: pointer targets in passing argument 1 of 'AUDIO_AdcFifoGetData' differ in signedness [-Wpointer-sign]
+                     AUDIO_AdcFifoGetData(&ch_left, &ch_right);
+                                          ^
+In file included from main.c:66:0:
+AUDIO.h:88:6: note: expected 'short int *' but argument is of type 'alt_u16 * {aka short unsigned int *}'
+ void AUDIO_AdcFifoGetData(short *pch_left, short *pch_right);
+      ^
+main.c:436:52: warning: pointer targets in passing argument 2 of 'AUDIO_AdcFifoGetData' differ in signedness [-Wpointer-sign]
+                     AUDIO_AdcFifoGetData(&ch_left, &ch_right);
+                                                    ^
+In file included from main.c:66:0:
+AUDIO.h:88:6: note: expected 'short int *' but argument is of type 'alt_u16 * {aka short unsigned int *}'
+ void AUDIO_AdcFifoGetData(short *pch_left, short *pch_right);
+      ^
+make: *** [obj/default/main.o] Error 1
+
+18:47:20 Build Finished (took 2s.137ms)
+

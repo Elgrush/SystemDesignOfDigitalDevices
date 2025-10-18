@@ -8,7 +8,7 @@ data = data.resize((640, 480))
 data = data.convert("P", palette=Image.ADAPTIVE, colors=256, dither=1)
 
 data_ar = np.array(data).reshape(-1)
-colors = palette = np.array(data.getpalette(),dtype=np.uint8).reshape((256,3))
+colors = np.array(data.getpalette(),dtype=np.uint8).reshape((256,3))
 
 #print(colors)
 #print(np.unique(np.array(data)))

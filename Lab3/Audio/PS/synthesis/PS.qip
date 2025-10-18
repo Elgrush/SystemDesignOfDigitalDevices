@@ -1,0 +1,40 @@
+set_global_assignment -entity "PS" -library "PS" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "PS" -library "PS" -name IP_TOOL_VERSION "17.1"
+set_global_assignment -entity "PS" -library "PS" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "PS" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../PS.sopcinfo"]
+set_global_assignment -entity "PS" -library "PS" -name SLD_INFO "QSYS_NAME PS HAS_SOPCINFO 1 GENERATION_ID 1760787036"
+set_global_assignment -library "PS" -name MISC_FILE [file join $::quartus(qip_path) "../PS.cmp"]
+set_global_assignment -library "PS" -name SLD_FILE [file join $::quartus(qip_path) "PS.debuginfo"]
+set_global_assignment -entity "PS" -library "PS" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
+set_global_assignment -entity "PS" -library "PS" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
+set_global_assignment -entity "PS" -library "PS" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "PS" -name MISC_FILE [file join $::quartus(qip_path) "../../PS.qsys"]
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_NAME "UFM="
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_DISPLAY_NAME "UFM="
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTc2MDc4NzAzNg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "PS" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_NAME "UFNfcHMyXzA="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_DISPLAY_NAME "UFMvMiBDb250cm9sbGVy"
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_AUTHOR "SW50ZWwgRlBHQSBVbml2ZXJzaXR5IFByb2dyYW0="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_VERSION "MTcuMQ=="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_DESCRIPTION "UFMvMiBjb250cm9sbGVyIGZvciB0aGUgREUtU2VyaWVzIGJvYXJkcw=="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_PARAMETER "YXZhbG9uX2J1c190eXBl::U3RyZWFtaW5n::QXZhbG9uIFR5cGU="
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "PS_ps2_0" -library "PS" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::MA==::QXV0byBDTE9DS19SQVRF"
+
+set_global_assignment -library "PS" -name VERILOG_FILE [file join $::quartus(qip_path) "PS.v"]
+set_global_assignment -library "PS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_ps2.v"]
+set_global_assignment -library "PS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_ps2_command_out.v"]
+set_global_assignment -library "PS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_ps2_data_in.v"]
+set_global_assignment -library "PS" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/PS_ps2_0.v"]

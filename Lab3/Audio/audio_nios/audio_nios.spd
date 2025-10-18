@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/audio_nios_altpll_audio.vo"
+   type="VERILOG"
+   library="altpll_audio" />
+ <file path="simulation/audio_nios.v" type="VERILOG" />
+ <topLevel name="audio_nios" />
+ <deviceFamily name="cyclonev" />
+ <modelMap
+   controllerPath="audio_nios.onchip_memory2"
+   modelPath="audio_nios.onchip_memory2" />
+</simPackage>
