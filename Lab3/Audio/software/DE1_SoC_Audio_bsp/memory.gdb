@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu' in SOPC Builder design 'audio_nios'
 # SOPC Builder design path: ../../audio_nios.sopcinfo
 #
-# Generated: Tue Sep 03 11:26:39 CST 2013
+# Generated: Sat Oct 18 21:54:38 MSK 2025
 
 # DO NOT MODIFY THIS FILE
 #

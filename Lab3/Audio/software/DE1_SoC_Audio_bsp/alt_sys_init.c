@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'audio_nios'
  * SOPC Builder design path: ../../audio_nios.sopcinfo
  *
- * Generated: Tue Sep 03 11:26:39 CST 2013
+ * Generated: Sat Oct 18 21:54:38 MSK 2025
  */
 
 /*
@@ -58,19 +58,21 @@
  * Device headers
  */
 
-#include "altera_nios2_qsys_irq.h"
+#include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_sysid_qsys.h"
 #include "altera_avalon_timer.h"
+#include "altera_up_avalon_ps2.h"
 
 /*
  * Allocate the device storage
  */
 
-ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( CPU, cpu);
+ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( CPU, cpu);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART, jtag_uart);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS, sysid_qsys);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, timer);
+ALTERA_UP_AVALON_PS2_INSTANCE ( PS2_0, ps2_0);
 
 /*
  * Initialize the interrupt controller devices
@@ -82,7 +84,7 @@ ALTERA_AVALON_TIMER_INSTANCE ( TIMER, timer);
 
 void alt_irq_init ( const void* base )
 {
-    ALTERA_NIOS2_QSYS_IRQ_INIT ( CPU, cpu);
+    ALTERA_NIOS2_GEN2_IRQ_INIT ( CPU, cpu);
     alt_irq_cpu_enable_interrupts();
 }
 
@@ -96,4 +98,5 @@ void alt_sys_init( void )
     ALTERA_AVALON_TIMER_INIT ( TIMER, timer);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART, jtag_uart);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS, sysid_qsys);
+    ALTERA_UP_AVALON_PS2_INIT ( PS2_0, ps2_0);
 }

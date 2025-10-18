@@ -69,3 +69,9 @@ AUDIO.h:88:6: note: expected 'short int *' but argument is of type 'alt_u16 * {a
  void AUDIO_AdcFifoGetData(short *pch_left, short *pch_right);
       ^
 make: *** [obj/default/main.o] Error 1
+21:51:31 **** Clean-only build of configuration Nios II for project Jopa_bsp ****
+make clean 
+[BSP clean complete]
+21:51:32 **** Clean-only build of configuration Nios II for project Jopa ****
+make clean 
+[Jopa clean complete]

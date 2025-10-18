@@ -33,7 +33,7 @@
 
 //`define ENABLE_HPS
 
-module DE1_SoC_Audio(
+module DE1_SoC(
 
       ///////// ADC /////////
       inout              ADC_CS_N,
@@ -215,7 +215,7 @@ wire reset_n;
 
 assign reset_n = 1'b1;
 
-audio_nios u0(
+laincore u0(
 
 		.clk_clk                                (CLOCK_50),                            //                         clk.clk
 		.reset_reset_n                          (reset_n),                      //                       reset.reset_n
@@ -228,16 +228,6 @@ audio_nios u0(
                                               HEX1P, HEX1, HEX0P, HEX0}),            //            seg7_conduit_end.export
 		.pio_0_external_connection_export       (LEDR),   //   pio_0_external_connection.export
 		.sw_external_connection_export          (SW),      //      sw_external_connection.export
-		
-		.i2c_scl_external_connection_export     (FPGA_I2C_SCLK), // i2c_scl_external_connection.export
-		.i2c_sda_external_connection_export     (FPGA_I2C_SDAT), // i2c_sda_external_connection.export
-		
-		.audio_conduit_end_XCK                  (AUD_XCK),              //           audio_conduit_end.XCK
-		.audio_conduit_end_ADCDAT               (AUD_ADCDAT),           //                            .ADCDAT
-		.audio_conduit_end_ADCLRC               (AUD_ADCLRCK),           //                            .ADCLRC
-		.audio_conduit_end_DACDAT               (AUD_DACDAT),           //                            .DACDAT
-		.audio_conduit_end_DACLRC               (AUD_DACLRCK),           //                            .DACLRC
-		.audio_conduit_end_BCLK                 (AUD_BCLK),             //                            .BCLK
 
 		.sdram_wire_addr                        (DRAM_ADDR),                    //                  sdram_wire.addr
 		.sdram_wire_ba                          (DRAM_BA),                      //                            .ba
@@ -247,7 +237,10 @@ audio_nios u0(
 		.sdram_wire_dq                          (DRAM_DQ),                      //                            .dq
 		.sdram_wire_dqm                         ({DRAM_UDQM,DRAM_LDQM}),                     //                            .dqm
 		.sdram_wire_ras_n                       (DRAM_RAS_N),                   //                            .ras_n
-		.sdram_wire_we_n                        (DRAM_WE_N)                    //                            .we_n
+		.sdram_wire_we_n                        (DRAM_WE_N),                    //                            .we_n
+		
+		.ps2_0_external_interface_CLK           (PS2_CLK),
+		.ps2_0_external_interface_DAT           (PS2_DAT)
 		
 	);
 	

@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Oct 18, 2025 6:15:18 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1760796918874</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>F:\SVN\de1_soc\cd\CD_HW_revB\Demonstrations\FPGA\DE1_SoC_Audio\software\DE1_SoC_Audio_bsp</BspGeneratedLocation>
-        <BspSettingsFile>E:\CodingSpace\SDDD\Lab3\Audio\software\DE1_SoC_Audio_bsp\settings.bsp</BspSettingsFile>
+        <BspGeneratedTimeStamp>Oct 18, 2025 9:54:38 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1760810078274</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>G:\CodingSpace\SystemDesignOfDigitalDevices\Lab3\Audio\software\DE1_SoC_Audio_bsp</BspGeneratedLocation>
+        <BspSettingsFile>G:\CodingSpace\SystemDesignOfDigitalDevices\Lab3\Audio\software\DE1_SoC_Audio_bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\audio_nios.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>

@@ -1,0 +1,6 @@
+21:51:31 **** Clean-only build of configuration Nios II for project Jopa_bsp ****
+make clean 
+[BSP clean complete]
+
+21:51:31 Build Finished (took 357ms)
+
