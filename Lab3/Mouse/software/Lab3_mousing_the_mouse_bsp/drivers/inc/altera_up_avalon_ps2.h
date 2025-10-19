@@ -99,7 +99,7 @@ void alt_up_ps2_init(alt_up_ps2_dev *ps2);
 void alt_up_ps2_enable_read_interrupt(alt_up_ps2_dev *ps2);
 
 /**
- * @brief Diaable read interrupts for the PS/2 port.
+ * @brief Disable read interrupts for the PS/2 port.
  *
  * @param ps2 -- the PS/2 device structure.
  *

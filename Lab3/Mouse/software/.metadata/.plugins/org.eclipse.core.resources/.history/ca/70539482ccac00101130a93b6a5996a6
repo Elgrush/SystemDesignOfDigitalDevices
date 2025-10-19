@@ -1,0 +1,48 @@
+/*
+ * mouse.c
+ *
+ *  Created on: 19 окт. 2025 г.
+ *      Author: Elgrush
+ */
+
+#include "mouse.h"
+
+int mouse_innit(alt_up_ps2_dev* ps2) {
+	ps2 = alt_up_ps2_open_dev("ps2_0");
+
+	if(ps2 == 0) {
+		return 1;
+	}
+
+	if(register_interrupt(ps2))
+		return 1;
+
+	return 0;
+}
+
+int register_interupt(alt_up_ps2_dev* ps2){
+	alt_up_ps2_enable_read_interrupt(ps2);
+	return alt_ic_isr_register(0, ps2->irq_id, mouse_isr);
+}
+
+void mouse_isr() {
+	ps2_read (ps2, &control_byte, &X, &Y);
+
+	if(control_byte & 32) {
+		Y_move -= Y;
+	} else {
+		Y_move += Y;
+	}
+
+	if(control_byte & 16) {
+		X_move -= X;
+	} else {
+		X_move += X;
+	}
+}
+
+void ps2_read (alt_up_ps2_dev* ps2, unsigned char* control_byte, unsigned char* X, unsigned char* Y) {
+	alt_up_ps2_read_data_byte(ps2, control_byte);
+	alt_up_ps2_read_data_byte(ps2, X);
+	alt_up_ps2_read_data_byte(ps2, Y);
+}

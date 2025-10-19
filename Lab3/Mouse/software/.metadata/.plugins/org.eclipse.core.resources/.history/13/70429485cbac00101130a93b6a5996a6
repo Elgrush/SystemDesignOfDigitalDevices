@@ -1,0 +1,26 @@
+/*
+ * mouse.h
+ *
+ *  Created on: 19 окт. 2025 г.
+ *      Author: Elgrush
+ */
+
+#ifndef MOUSE_H_
+#define MOUSE_H_
+
+#include "altera_up_avalon_ps2.h"
+
+alt_u32 X_move, Y_move;
+unsigned char control_byte, X, Y;
+
+alt_up_ps2_dev* ps2;
+
+int mouse_innit(alt_up_ps2_dev* ps2);
+
+void mouse_isr();
+
+void register_interrupt();
+
+void ps2_read (alt_up_ps2_dev* ps2, unsigned char* control_byte, unsigned char* X, unsigned char* Y);
+
+#endif /* MOUSE_H_ */

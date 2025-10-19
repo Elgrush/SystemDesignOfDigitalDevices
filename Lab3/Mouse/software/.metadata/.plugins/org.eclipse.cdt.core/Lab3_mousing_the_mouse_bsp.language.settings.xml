@@ -1376,6 +1376,220 @@
 					</entry>
 				</language>
 			</provider>
+			<provider id="altera.tool.Nios2GCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.gcc">
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_write.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_exit.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="alt_sys_init.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_alarm_start.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_init.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_timer_sc.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_read.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_tick.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_main.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_sbrk.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_register.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/altera_nios2_gen2_irq.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_gmon.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_handler.c">
+						<entry kind="includePath" name="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/software/Lab3_mousing_the_mouse_bsp/newlib/nios2-elf/include"/>
+						<entry kind="includePath" name="/${ProjName}/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+				</language>
+			</provider>
 		</extension>
 	</configuration>
 </project>

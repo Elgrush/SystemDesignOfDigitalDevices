@@ -93,8 +93,6 @@
     #define BUF_SAMPLE_NUM     (96000*5)  // 5 second @ 96K
 #endif 
 
-alt_up_ps2_dev* ps2;
-unsigned char control_byte, X, Y;
 
 bool init(void){
     bool bSuccess = FALSE;
@@ -104,7 +102,7 @@ bool init(void){
 
     SEG7_Decimal(0x00000000, 0x00);
 
-    bSuccess |= mous_innit(ps2);
+    bSuccess |= mouse_innit(ps2);
         
     return bSuccess;
 }
@@ -118,9 +116,9 @@ int main()
         
      while(1) {
     	 if(IORD_ALTERA_AVALON_PIO_EDGE_CAP(KEY_BASE) & 0x01) {
-    		 ps2_read(ps2, &control_byte, &X, &Y);
-    		 int man = X + Y;
+    		 int man = X_move + Y_move;
     		 SEG7_Decimal(man, 0x04);
+    		 float dist = sqrtf(X_move*X_move + Y_move*Y_move);
     	 }
      }
     
