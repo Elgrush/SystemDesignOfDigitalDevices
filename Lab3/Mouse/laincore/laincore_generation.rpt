@@ -12,12 +12,14 @@ Progress: Adding mm_clock_crossing_bridge_0 [altera_avalon_mm_clock_crossing_bri
 Progress: Parameterizing module mm_clock_crossing_bridge_0
 Progress: Adding nios2_gen2_0 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios2_gen2_0
+Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_0
 Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 17.1]
 Progress: Parameterizing module onchip_memory2_0
 Progress: Adding onchip_memory_0 [altera_avalon_onchip_memory2 17.1]
 Progress: Parameterizing module onchip_memory_0
-Progress: Adding pio_0 [altera_avalon_pio 17.1]
-Progress: Parameterizing module pio_0
+Progress: Adding pio_led [altera_avalon_pio 17.1]
+Progress: Parameterizing module pio_led
 Progress: Adding pll_0 [altera_pll 17.1]
 Progress: Parameterizing module pll_0
 Progress: Adding ps2_0 [altera_up_avalon_ps2 17.1]
@@ -30,6 +32,8 @@ Progress: Adding sw [altera_avalon_pio 17.1]
 Progress: Parameterizing module sw
 Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 17.1]
 Progress: Parameterizing module sysid_qsys_0
+Progress: Adding timer_0 [altera_avalon_timer 17.1]
+Progress: Parameterizing module timer_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -59,12 +63,14 @@ Progress: Adding mm_clock_crossing_bridge_0 [altera_avalon_mm_clock_crossing_bri
 Progress: Parameterizing module mm_clock_crossing_bridge_0
 Progress: Adding nios2_gen2_0 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios2_gen2_0
+Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_0
 Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 17.1]
 Progress: Parameterizing module onchip_memory2_0
 Progress: Adding onchip_memory_0 [altera_avalon_onchip_memory2 17.1]
 Progress: Parameterizing module onchip_memory_0
-Progress: Adding pio_0 [altera_avalon_pio 17.1]
-Progress: Parameterizing module pio_0
+Progress: Adding pio_led [altera_avalon_pio 17.1]
+Progress: Parameterizing module pio_led
 Progress: Adding pll_0 [altera_pll 17.1]
 Progress: Parameterizing module pll_0
 Progress: Adding ps2_0 [altera_up_avalon_ps2 17.1]
@@ -77,6 +83,8 @@ Progress: Adding sw [altera_avalon_pio 17.1]
 Progress: Parameterizing module sw
 Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 17.1]
 Progress: Parameterizing module sysid_qsys_0
+Progress: Adding timer_0 [altera_avalon_timer 17.1]
+Progress: Parameterizing module timer_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -90,41 +98,52 @@ Info: laincore.sw: PIO inputs are not hardwired in test bench. Undefined values 
 Info: laincore.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: laincore.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
 Info: laincore: Generating laincore "laincore" for QUARTUS_SYNTH
+Warning: laincore: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: laincore: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
 Info: jtag_uart_0: Starting RTL generation for module 'laincore_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=laincore_jtag_uart_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0002_jtag_uart_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0002_jtag_uart_0_gen//laincore_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=laincore_jtag_uart_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0002_jtag_uart_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0002_jtag_uart_0_gen//laincore_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'laincore_jtag_uart_0'
 Info: jtag_uart_0: "laincore" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: key: Starting RTL generation for module 'laincore_key'
-Info: key:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_key --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0003_key_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0003_key_gen//laincore_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_key --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0003_key_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0003_key_gen//laincore_key_component_configuration.pl  --do_build_sim=0  ]
 Info: key: Done RTL generation for module 'laincore_key'
 Info: key: "laincore" instantiated altera_avalon_pio "key"
 Info: mm_clock_crossing_bridge_0: "laincore" instantiated altera_avalon_mm_clock_crossing_bridge "mm_clock_crossing_bridge_0"
 Info: nios2_gen2_0: "laincore" instantiated altera_nios2_gen2 "nios2_gen2_0"
+Info: nios_custom_instr_floating_point_2_0: "laincore" instantiated altera_nios_custom_instr_floating_point_2 "nios_custom_instr_floating_point_2_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'laincore_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=laincore_onchip_memory2_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0005_onchip_memory2_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0005_onchip_memory2_0_gen//laincore_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=laincore_onchip_memory2_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0005_onchip_memory2_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0005_onchip_memory2_0_gen//laincore_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'laincore_onchip_memory2_0'
 Info: onchip_memory2_0: "laincore" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: onchip_memory_0: Starting RTL generation for module 'laincore_onchip_memory_0'
-Info: onchip_memory_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=laincore_onchip_memory_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0006_onchip_memory_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0006_onchip_memory_0_gen//laincore_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=laincore_onchip_memory_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0006_onchip_memory_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0006_onchip_memory_0_gen//laincore_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory_0: Done RTL generation for module 'laincore_onchip_memory_0'
 Info: onchip_memory_0: "laincore" instantiated altera_avalon_onchip_memory2 "onchip_memory_0"
-Info: pio_0: Starting RTL generation for module 'laincore_pio_0'
-Info: pio_0:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_pio_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0007_pio_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0007_pio_0_gen//laincore_pio_0_component_configuration.pl  --do_build_sim=0  ]
-Info: pio_0: Done RTL generation for module 'laincore_pio_0'
-Info: pio_0: "laincore" instantiated altera_avalon_pio "pio_0"
+Info: pio_led: Starting RTL generation for module 'laincore_pio_led'
+Info: pio_led:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_pio_led --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0007_pio_led_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0007_pio_led_gen//laincore_pio_led_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_led: Done RTL generation for module 'laincore_pio_led'
+Info: pio_led: "laincore" instantiated altera_avalon_pio "pio_led"
 Info: pll_0: "laincore" instantiated altera_pll "pll_0"
 Info: ps2_0: Starting Generation of PS2 Controller
 Info: ps2_0: "laincore" instantiated altera_up_avalon_ps2 "ps2_0"
 Info: sdram: Starting RTL generation for module 'laincore_sdram'
-Info: sdram:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=laincore_sdram --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0010_sdram_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0010_sdram_gen//laincore_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=laincore_sdram --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0010_sdram_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0010_sdram_gen//laincore_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'laincore_sdram'
 Info: sdram: "laincore" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: seg7: "laincore" instantiated SEG7_IF "seg7"
 Info: sw: Starting RTL generation for module 'laincore_sw'
-Info: sw:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_sw --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0012_sw_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0012_sw_gen//laincore_sw_component_configuration.pl  --do_build_sim=0  ]
+Info: sw:   Generation command is [exec G:/programs/17.1/quartus/bin64/perl/bin/perl.exe -I G:/programs/17.1/quartus/bin64/perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=laincore_sw --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0012_sw_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0012_sw_gen//laincore_sw_component_configuration.pl  --do_build_sim=0  ]
 Info: sw: Done RTL generation for module 'laincore_sw'
 Info: sw: "laincore" instantiated altera_avalon_pio "sw"
 Info: sysid_qsys_0: "laincore" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
+Info: timer_0: Starting RTL generation for module 'laincore_timer_0'
+Info: timer_0:   Generation command is [exec G:/Programs/17.1/quartus/bin64//perl/bin/perl.exe -I G:/Programs/17.1/quartus/bin64//perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/common -I G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- G:/programs/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=laincore_timer_0 --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0014_timer_0_gen/ --quartus_dir=G:/programs/17.1/quartus --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0014_timer_0_gen//laincore_timer_0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer_0: Done RTL generation for module 'laincore_timer_0'
+Info: timer_0: "laincore" instantiated altera_avalon_timer "timer_0"
+Info: nios2_gen2_0_custom_instruction_master_translator: "laincore" instantiated altera_customins_master_translator "nios2_gen2_0_custom_instruction_master_translator"
+Info: nios2_gen2_0_custom_instruction_master_comb_xconnect: "laincore" instantiated altera_customins_xconnect "nios2_gen2_0_custom_instruction_master_comb_xconnect"
+Info: nios2_gen2_0_custom_instruction_master_comb_slave_translator0: "laincore" instantiated altera_customins_slave_translator "nios2_gen2_0_custom_instruction_master_comb_slave_translator0"
+Info: nios2_gen2_0_custom_instruction_master_multi_xconnect: "laincore" instantiated altera_customins_xconnect "nios2_gen2_0_custom_instruction_master_multi_xconnect"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
@@ -132,6 +151,7 @@ Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "laincore" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
@@ -143,33 +163,35 @@ Info: irq_mapper: "laincore" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_synchronizer: "laincore" instantiated altera_irq_clock_crosser "irq_synchronizer"
 Info: rst_controller: "laincore" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'laincore_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec G:/Programs/17.1/quartus/bin64//eperlcmd.exe -I G:/Programs/17.1/quartus/bin64//perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=laincore_nios2_gen2_0_cpu --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0017_cpu_gen/ --quartus_bindir=G:/Programs/17.1/quartus/bin64/ --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_7355991764486565160.dir/0017_cpu_gen//laincore_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2025.10.18 23:28:39 (*) Starting Nios II generation
-Info: cpu: # 2025.10.18 23:28:39 (*)   Checking for plaintext license.
-Info: cpu: # 2025.10.18 23:28:39 (*)   Couldn't query license setup in Quartus directory G:/Programs/17.1/quartus/bin64/
-Info: cpu: # 2025.10.18 23:28:39 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.10.18 23:28:39 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2025.10.18 23:28:39 (*)   Plaintext license not found.
-Info: cpu: # 2025.10.18 23:28:39 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2025.10.18 23:28:40 (*)   Couldn't query license setup in Quartus directory G:/Programs/17.1/quartus/bin64/
-Info: cpu: # 2025.10.18 23:28:40 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2025.10.18 23:28:40 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2025.10.18 23:28:40 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2025.10.18 23:28:40 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.10.18 23:28:40 (*)   Creating all objects for CPU
-Info: cpu: # 2025.10.18 23:28:40 (*)     Testbench
-Info: cpu: # 2025.10.18 23:28:40 (*)     Instruction decoding
-Info: cpu: # 2025.10.18 23:28:40 (*)       Instruction fields
-Info: cpu: # 2025.10.18 23:28:40 (*)       Instruction decodes
-Info: cpu: # 2025.10.18 23:28:40 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2025.10.18 23:28:40 (*)       Instruction controls
-Info: cpu: # 2025.10.18 23:28:40 (*)     Pipeline frontend
-Info: cpu: # 2025.10.18 23:28:40 (*)     Pipeline backend
-Info: cpu: # 2025.10.18 23:28:41 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.10.18 23:28:41 (*)   Creating encrypted RTL
-Info: cpu: # 2025.10.18 23:28:42 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec G:/Programs/17.1/quartus/bin64//eperlcmd.exe -I G:/Programs/17.1/quartus/bin64//perl/lib -I G:/programs/17.1/quartus/sopc_builder/bin/europa -I G:/programs/17.1/quartus/sopc_builder/bin/perl_lib -I G:/programs/17.1/quartus/sopc_builder/bin -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- G:/programs/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=laincore_nios2_gen2_0_cpu --dir=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0022_cpu_gen/ --quartus_bindir=G:/Programs/17.1/quartus/bin64/ --verilog --config=C:/Users/Gigabyte/AppData/Local/Temp/alt0379_9109301560496303721.dir/0022_cpu_gen//laincore_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2025.10.19 02:44:19 (*) Starting Nios II generation
+Info: cpu: # 2025.10.19 02:44:19 (*)   Checking for plaintext license.
+Info: cpu: # 2025.10.19 02:44:19 (*)   Couldn't query license setup in Quartus directory G:/Programs/17.1/quartus/bin64/
+Info: cpu: # 2025.10.19 02:44:19 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.10.19 02:44:19 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.10.19 02:44:19 (*)   Plaintext license not found.
+Info: cpu: # 2025.10.19 02:44:19 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2025.10.19 02:44:19 (*)   Couldn't query license setup in Quartus directory G:/Programs/17.1/quartus/bin64/
+Info: cpu: # 2025.10.19 02:44:19 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2025.10.19 02:44:19 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2025.10.19 02:44:19 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: cpu: # 2025.10.19 02:44:19 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.10.19 02:44:19 (*)   Creating all objects for CPU
+Info: cpu: # 2025.10.19 02:44:19 (*)     Testbench
+Info: cpu: # 2025.10.19 02:44:19 (*)     Instruction decoding
+Info: cpu: # 2025.10.19 02:44:19 (*)       Instruction fields
+Info: cpu: # 2025.10.19 02:44:19 (*)       Instruction decodes
+Info: cpu: # 2025.10.19 02:44:19 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2025.10.19 02:44:20 (*)       Instruction controls
+Info: cpu: # 2025.10.19 02:44:20 (*)     Pipeline frontend
+Info: cpu: # 2025.10.19 02:44:20 (*)     Pipeline backend
+Info: cpu: # 2025.10.19 02:44:20 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.10.19 02:44:21 (*)   Creating encrypted RTL
+Info: cpu: # 2025.10.19 02:44:21 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'laincore_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
+Info: fpci_combi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_combi "fpci_combi"
+Info: fpci_multi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_multi "fpci_multi"
 Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"
 Info: jtag_uart_0_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_0_avalon_jtag_slave_translator"
 Info: nios2_gen2_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_gen2_0_data_master_agent"
@@ -179,6 +201,7 @@ Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
 Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
 Info: nios2_gen2_0_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_gen2_0_data_master_limiter"
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_avalon_sc_fifo.v
@@ -195,10 +218,11 @@ Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
+Info: onchip_memory2_0_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "onchip_memory2_0_s1_cmd_width_adapter"
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_005: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_005"
 Info: avalon_st_adapter_006: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_006"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
@@ -211,8 +235,9 @@ Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Mouse/laincore/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter_001: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_005" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_006" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: laincore: Done "laincore" with 54 modules, 91 files
+Info: laincore: Done "laincore" with 65 modules, 119 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

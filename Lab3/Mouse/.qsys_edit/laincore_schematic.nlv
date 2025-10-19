@@ -1,36 +1,40 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst laincore.ps2_0 -pg 1 -lvl 4 -y 460
-preplace inst laincore.key -pg 1 -lvl 4 -y 280
-preplace inst laincore.sysid_qsys_0 -pg 1 -lvl 4 -y 190
-preplace inst laincore.onchip_memory2_0 -pg 1 -lvl 4 -y 110
+preplace inst laincore.ps2_0 -pg 1 -lvl 4 -y 660
+preplace inst laincore.key -pg 1 -lvl 4 -y 430
+preplace inst laincore.sysid_qsys_0 -pg 1 -lvl 4 -y 230
+preplace inst laincore.onchip_memory2_0 -pg 1 -lvl 4 -y 150
 preplace inst laincore.nios2_gen2_0.cpu -pg 1
+preplace inst laincore.jtag_uart_0 -pg 1 -lvl 3 -y 30
 preplace inst laincore.nios2_gen2_0.clock_bridge -pg 1
-preplace inst laincore.seg7 -pg 1 -lvl 4 -y 580
-preplace inst laincore.pll_0 -pg 1 -lvl 2 -y 340
+preplace inst laincore.seg7 -pg 1 -lvl 4 -y 780
+preplace inst laincore.pll_0 -pg 1 -lvl 2 -y 530
 preplace inst laincore -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst laincore.sw -pg 1 -lvl 4 -y 680
-preplace inst laincore.onchip_memory_0 -pg 1 -lvl 4 -y 30
-preplace inst laincore.clk_50 -pg 1 -lvl 1 -y 240
-preplace inst laincore.sdram -pg 1 -lvl 3 -y 320
-preplace inst laincore.nios2_gen2_0 -pg 1 -lvl 1 -y 50
+preplace inst laincore.sw -pg 1 -lvl 4 -y 880
+preplace inst laincore.onchip_memory_0 -pg 1 -lvl 4 -y 70
+preplace inst laincore.timer_0 -pg 1 -lvl 3 -y 170
+preplace inst laincore.pio_led -pg 1 -lvl 4 -y 310
+preplace inst laincore.clk_50 -pg 1 -lvl 1 -y 390
+preplace inst laincore.sdram -pg 1 -lvl 3 -y 490
+preplace inst laincore.nios2_gen2_0 -pg 1 -lvl 1 -y 150
 preplace inst laincore.nios2_gen2_0.reset_bridge -pg 1
-preplace inst laincore.mm_clock_crossing_bridge_0 -pg 1 -lvl 3 -y 90
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)laincore.seg7_conduit_end,(SLAVE)seg7.conduit_end) 1 0 4 NJ 630 NJ 630 NJ 630 NJ
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)sdram.wire,(SLAVE)laincore.sdram_wire) 1 0 3 NJ 430 NJ 430 NJ
-preplace netloc FAN_OUT<net_container>laincore</net_container>(MASTER)pll_0.outclk0,(SLAVE)nios2_gen2_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)sdram.clk,(SLAVE)onchip_memory_0.clk1,(SLAVE)onchip_memory2_0.clk1,(SLAVE)mm_clock_crossing_bridge_0.s0_clk) 1 0 4 190 230 NJ 230 910 220 1160
-preplace netloc FAN_OUT<net_container>laincore</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)ps2_0.interrupt,(SLAVE)key.irq) 1 1 3 NJ 330 NJ 430 1260
-preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)sw.clk,(SLAVE)ps2_0.clk,(SLAVE)key.clk,(SLAVE)seg7.clock_sink,(MASTER)pll_0.outclk1,(SLAVE)mm_clock_crossing_bridge_0.m0_clk) 1 2 2 970 450 1160
-preplace netloc POINT_TO_POINT<net_container>laincore</net_container>(SLAVE)pll_0.refclk,(MASTER)clk_50.clk) 1 1 1 590
-preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)key.s1,(SLAVE)sw.s1,(MASTER)mm_clock_crossing_bridge_0.m0,(SLAVE)seg7.avaon_slave,(SLAVE)ps2_0.avalon_ps2_slave) 1 3 1 1200
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)laincore.ps2_0_external_interface,(SLAVE)ps2_0.external_interface) 1 0 4 NJ 460 NJ 460 NJ 510 NJ
-preplace netloc INTERCONNECT<net_container>laincore</net_container>(SLAVE)sdram.s1,(SLAVE)mm_clock_crossing_bridge_0.s0,(MASTER)nios2_gen2_0.data_master,(SLAVE)onchip_memory_0.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1) 1 0 4 210 190 630 100 950 240 1220
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)pll_0.locked,(SLAVE)laincore.pll_locked) 1 0 2 NJ 350 NJ
+preplace inst laincore.mm_clock_crossing_bridge_0 -pg 1 -lvl 3 -y 290
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)ps2_0.external_interface,(SLAVE)laincore.ps2_0_external_interface) 1 0 4 NJ 710 NJ 710 NJ 710 NJ
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)pio_led.external_connection,(SLAVE)laincore.pio_0_external_connection) 1 0 4 NJ 350 NJ 350 NJ 280 NJ
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)laincore.sw_external_connection,(SLAVE)sw.external_connection) 1 0 4 NJ 910 NJ 910 NJ 910 NJ
+preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)key.clk,(SLAVE)mm_clock_crossing_bridge_0.m0_clk,(SLAVE)seg7.clock_sink,(SLAVE)pio_led.clk,(SLAVE)ps2_0.clk,(MASTER)pll_0.outclk1,(SLAVE)sw.clk) 1 2 2 860 600 1260
+preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)key.irq,(SLAVE)ps2_0.interrupt,(SLAVE)timer_0.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 1 3 NJ 240 960 480 1200
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)laincore.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 520 NJ 520 NJ
 preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)clk_50.clk_in,(SLAVE)laincore.clk) 1 0 1 NJ
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)sw.external_connection,(SLAVE)laincore.sw_external_connection) 1 0 4 NJ 710 NJ 710 NJ 710 NJ
-preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)key.external_connection,(SLAVE)laincore.key_external_connection) 1 0 4 NJ 310 NJ 310 NJ 310 NJ
+preplace netloc INTERCONNECT<net_container>laincore</net_container>(SLAVE)pll_0.reset,(SLAVE)sysid_qsys_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)sdram.reset,(SLAVE)key.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)timer_0.reset,(SLAVE)ps2_0.reset,(SLAVE)pio_led.reset,(MASTER)clk_50.clk_reset,(SLAVE)mm_clock_crossing_bridge_0.m0_reset,(SLAVE)seg7.reset_sink,(SLAVE)mm_clock_crossing_bridge_0.s0_reset,(SLAVE)onchip_memory_0.reset1,(SLAVE)nios2_gen2_0.reset,(SLAVE)sw.reset,(SLAVE)jtag_uart_0.reset) 1 0 4 240 110 620 500 920 420 1220
+preplace netloc POINT_TO_POINT<net_container>laincore</net_container>(MASTER)clk_50.clk,(SLAVE)pll_0.refclk) 1 1 1 600
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)laincore.pll_locked,(SLAVE)pll_0.locked) 1 0 2 NJ 540 NJ
+preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)mm_clock_crossing_bridge_0.s0_clk,(SLAVE)onchip_memory2_0.clk1,(MASTER)pll_0.outclk0,(SLAVE)sysid_qsys_0.clk,(SLAVE)timer_0.clk,(SLAVE)sdram.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)onchip_memory_0.clk1,(SLAVE)jtag_uart_0.clk) 1 0 4 200 70 NJ 70 940 140 1260
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)key.external_connection,(SLAVE)laincore.key_external_connection) 1 0 4 NJ 380 NJ 460 NJ 460 NJ
+preplace netloc FAN_OUT<net_container>laincore</net_container>(SLAVE)pio_led.s1,(SLAVE)key.s1,(SLAVE)ps2_0.avalon_ps2_slave,(SLAVE)seg7.avaon_slave,(SLAVE)sw.s1,(MASTER)mm_clock_crossing_bridge_0.m0) 1 3 1 1180
 preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)clk_50.clk_in_reset,(SLAVE)laincore.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>laincore</net_container>(MASTER)pll_0.outclk2,(MASTER)laincore.pll_sdam) 1 2 3 NJ 470 NJ 450 NJ
-preplace netloc INTERCONNECT<net_container>laincore</net_container>(SLAVE)ps2_0.reset,(SLAVE)onchip_memory_0.reset1,(SLAVE)sdram.reset,(SLAVE)seg7.reset_sink,(MASTER)clk_50.clk_reset,(SLAVE)sysid_qsys_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)onchip_memory2_0.reset1,(SLAVE)key.reset,(SLAVE)mm_clock_crossing_bridge_0.m0_reset,(SLAVE)sw.reset,(SLAVE)pll_0.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)mm_clock_crossing_bridge_0.s0_reset) 1 0 4 230 210 610 120 930 490 1240
-levelinfo -pg 1 0 160 1540
-levelinfo -hier laincore 170 350 700 1030 1310 1460
+preplace netloc EXPORT<net_container>laincore</net_container>(SLAVE)seg7.conduit_end,(SLAVE)laincore.seg7_conduit_end) 1 0 4 NJ 830 NJ 830 NJ 830 NJ
+preplace netloc EXPORT<net_container>laincore</net_container>(MASTER)laincore.pll_sdam,(MASTER)pll_0.outclk2) 1 2 3 NJ 620 NJ 620 NJ
+preplace netloc INTERCONNECT<net_container>laincore</net_container>(SLAVE)sdram.s1,(SLAVE)timer_0.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)mm_clock_crossing_bridge_0.s0,(SLAVE)onchip_memory_0.s1) 1 0 4 220 90 640 180 900 160 1240
+levelinfo -pg 1 0 170 1580
+levelinfo -hier laincore 180 360 710 1040 1350 1500

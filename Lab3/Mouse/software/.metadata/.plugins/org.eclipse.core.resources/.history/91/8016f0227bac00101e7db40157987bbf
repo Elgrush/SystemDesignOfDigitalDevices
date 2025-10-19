@@ -1,0 +1,123 @@
+// --------------------------------------------------------------------
+// Copyright (c) 2010 by Terasic Technologies Inc. 
+// --------------------------------------------------------------------
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altera Development 
+//   Kits made by Terasic.  Other use of this code, including the selling 
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL/Verilog or C/C++ source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use 
+//   or functionality of this code.
+//
+// --------------------------------------------------------------------
+//           
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
+
+/*
+ * Function:
+ *      Audio record and Play
+ * 
+ * Human Machine Interface:
+ *      KEY3: Record Start/Stop (Auto Stop when buffer is full)
+ *      KEY2: Play Start/Stop (Audo Stop when no data to play)
+ *      SEG7: Display the duration of recording/playing
+ *      LED:  Display the singal strength.
+ *      SW0:  Audio Source Selection: DOWN-->MIC, UP-->LINE-IN
+ *      SW1:  MIC Boost Control when audio source is MIC. DOWN-->BOOST OFF UP-->BOSST ON
+ *      SW2:  Zero-Cross detect for Playing: DOWN-->OFF, UP-->ON
+ *      SW5/SW4/SW3: Sample Rate Control: 
+ *                    DOWN/DOWN/DOWN-->96K 
+ *                    DOWN/DOWN/UP->48K,
+ *                    DOWN/UP/DOWN->44.1K, 
+ *                    DOWN/UP/UP->32K,
+ *                    UP/DOWN/DOWN->8K
+ * 
+ * CONFIGURATION:
+ *      SDRAM: used to store record audio signal
+ *      on-chip memory: used to store Nios II program
+ * 
+ * Revision:
+ *      V1.0, 11/21/2007, init by Richard.
+ *      V1.01 21/5 /2010  
+ * 
+ * Compatibility:
+ *      Quartus 13.0
+ *      DE1_SoC Board
+ */
+
+#include "my_includes.h"
+#include "LED.h"
+#include "SEG7.h"
+#include "mouse.h"
+#include <math.h>
+
+
+#ifdef DEBUG_APP
+    #define APP_DEBUG(x)    DEBUG(x)
+#else
+    #define APP_DEBUG(x)
+#endif
+
+
+///////////////////////////////////////////////////////////////////////////////
+//////////// Internal function prototype & data structure /////////////////////
+///////////////////////////////////////////////////////////////////////////////
+//================= internal function prototype & data structure definit =====
+#define RECORD_BUTTON   0x08
+#define PLAY_BUTTON     0x04
+#define PLAYRING_BUTTON 0x02
+#define RECORD_BLOCK_SIZE   250    // ADC FIFO: 512 byte
+#define PLAY_BLOCK_SIZE     250    // DAC FIFO: 512 byte
+#define MAX_TRY_CNT         1024
+#define LINEOUT_DEFUALT_VOL 0x79  // 0 dB
+#define USE_SDRAM_FOR_DATA
+
+#ifndef USE_SDRAM_FOR_DATA
+    #define BUF_SAMPLE_NUM     (96000*5)  // 5 second @ 96K
+#endif 
+
+alt_up_ps2_dev* ps2;
+
+bool init(void){
+    bool bSuccess = False;
+    
+    SEG7_Clear();
+
+
+    SEG7_Decimal(0x00000000, 0x00);
+
+    bSuccess |= mous_innit(ps2);
+        
+    return bSuccess;
+}
+
+int main()
+{
+    printf("\nHello World\n");
+
+    if (init())
+        return 1;
+        
+     while(1) {
+    	 //
+     }
+    
+}
+    

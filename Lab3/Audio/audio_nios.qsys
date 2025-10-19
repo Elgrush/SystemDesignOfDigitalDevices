@@ -1287,10 +1287,10 @@
    end="altpll_audio.refclk" />
  <connection kind="clock" version="17.1" start="clk_50.clk" end="pll.refclk" />
  <connection kind="clock" version="17.1" start="pll.outclk0" end="sdram.clk" />
- <connection kind="clock" version="17.1" start="pll.outclk0" end="jtag_uart.clk" />
  <connection kind="clock" version="17.1" start="pll.outclk0" end="cpu.clk" />
  <connection kind="clock" version="17.1" start="pll.outclk0" end="sysid_qsys.clk" />
  <connection kind="clock" version="17.1" start="pll.outclk0" end="timer.clk" />
+ <connection kind="clock" version="17.1" start="pll.outclk0" end="jtag_uart.clk" />
  <connection
    kind="clock"
    version="17.1"

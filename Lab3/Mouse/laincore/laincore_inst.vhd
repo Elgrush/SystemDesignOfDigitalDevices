@@ -2,6 +2,7 @@
 		port (
 			clk_clk                          : in    std_logic                     := 'X';             -- clk
 			key_external_connection_export   : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+			pio_0_external_connection_export : out   std_logic_vector(9 downto 0);                     -- export
 			pll_locked_export                : out   std_logic;                                        -- export
 			pll_sdam_clk                     : out   std_logic;                                        -- clk
 			ps2_0_external_interface_CLK     : inout std_logic                     := 'X';             -- CLK
@@ -17,8 +18,7 @@
 			sdram_wire_ras_n                 : out   std_logic;                                        -- ras_n
 			sdram_wire_we_n                  : out   std_logic;                                        -- we_n
 			seg7_conduit_end_export          : out   std_logic_vector(47 downto 0);                    -- export
-			sw_external_connection_export    : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
-			pio_0_external_connection_export : out   std_logic_vector(9 downto 0)                      -- export
+			sw_external_connection_export    : in    std_logic_vector(9 downto 0)  := (others => 'X')  -- export
 		);
 	end component laincore;
 
@@ -26,6 +26,7 @@
 		port map (
 			clk_clk                          => CONNECTED_TO_clk_clk,                          --                       clk.clk
 			key_external_connection_export   => CONNECTED_TO_key_external_connection_export,   --   key_external_connection.export
+			pio_0_external_connection_export => CONNECTED_TO_pio_0_external_connection_export, -- pio_0_external_connection.export
 			pll_locked_export                => CONNECTED_TO_pll_locked_export,                --                pll_locked.export
 			pll_sdam_clk                     => CONNECTED_TO_pll_sdam_clk,                     --                  pll_sdam.clk
 			ps2_0_external_interface_CLK     => CONNECTED_TO_ps2_0_external_interface_CLK,     --  ps2_0_external_interface.CLK
@@ -41,7 +42,6 @@
 			sdram_wire_ras_n                 => CONNECTED_TO_sdram_wire_ras_n,                 --                          .ras_n
 			sdram_wire_we_n                  => CONNECTED_TO_sdram_wire_we_n,                  --                          .we_n
 			seg7_conduit_end_export          => CONNECTED_TO_seg7_conduit_end_export,          --          seg7_conduit_end.export
-			sw_external_connection_export    => CONNECTED_TO_sw_external_connection_export,    --    sw_external_connection.export
-			pio_0_external_connection_export => CONNECTED_TO_pio_0_external_connection_export  -- pio_0_external_connection.export
+			sw_external_connection_export    => CONNECTED_TO_sw_external_connection_export     --    sw_external_connection.export
 		);
 

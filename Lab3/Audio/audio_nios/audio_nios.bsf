@@ -262,7 +262,7 @@ refer to the applicable agreement for further details.
 		(text "export" (rect 213 651 462 1312)(font "Arial" (color 0 0 0)))
 		(text "sw_external_connection" (rect 69 667 270 1347)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 213 691 462 1392)(font "Arial" (color 0 0 0)))
-		(text " audio_nios " (rect 464 712 1000 1434)(font "Arial" ))
+		(text " system " (rect 477 712 1002 1434)(font "Arial" ))
 		(line (pt 208 32)(pt 304 32)(line_width 1))
 		(line (pt 304 32)(pt 304 712)(line_width 1))
 		(line (pt 208 712)(pt 304 712)(line_width 1))

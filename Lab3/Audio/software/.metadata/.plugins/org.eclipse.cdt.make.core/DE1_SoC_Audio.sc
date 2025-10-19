@@ -2,6 +2,16 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1275229228;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1275229228.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.158598120;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.1894271029">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/HAL/inc"/>
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/"/>
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/drivers/inc"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++\x86_64-pc-cygwin"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++\backward"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include-fixed"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\usr\include"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++\x86_64-pc-cygwin"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include\c++\backward"/>
@@ -349,6 +359,13 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1275229228;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1275229228.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.2125563293;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.883519094">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/HAL/inc"/>
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/"/>
+<includePath path="G:/CodingSpace/SystemDesignOfDigitalDevices/Lab3/Audio/software/DE1_SoC_Audio_bsp/drivers/inc"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include-fixed"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\usr\include"/>
+<includePath path="G:\Programs\17.1\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include-fixed"/>
 <includePath path="E:\intelFPGA_lite\17.1\quartus\bin64\cygwin\usr\include"/>

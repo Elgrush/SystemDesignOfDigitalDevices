@@ -1,6 +1,7 @@
 	laincore u0 (
 		.clk_clk                          (<connected-to-clk_clk>),                          //                       clk.clk
 		.key_external_connection_export   (<connected-to-key_external_connection_export>),   //   key_external_connection.export
+		.pio_0_external_connection_export (<connected-to-pio_0_external_connection_export>), // pio_0_external_connection.export
 		.pll_locked_export                (<connected-to-pll_locked_export>),                //                pll_locked.export
 		.pll_sdam_clk                     (<connected-to-pll_sdam_clk>),                     //                  pll_sdam.clk
 		.ps2_0_external_interface_CLK     (<connected-to-ps2_0_external_interface_CLK>),     //  ps2_0_external_interface.CLK
@@ -16,7 +17,6 @@
 		.sdram_wire_ras_n                 (<connected-to-sdram_wire_ras_n>),                 //                          .ras_n
 		.sdram_wire_we_n                  (<connected-to-sdram_wire_we_n>),                  //                          .we_n
 		.seg7_conduit_end_export          (<connected-to-seg7_conduit_end_export>),          //          seg7_conduit_end.export
-		.sw_external_connection_export    (<connected-to-sw_external_connection_export>),    //    sw_external_connection.export
-		.pio_0_external_connection_export (<connected-to-pio_0_external_connection_export>)  // pio_0_external_connection.export
+		.sw_external_connection_export    (<connected-to-sw_external_connection_export>)     //    sw_external_connection.export
 	);
 

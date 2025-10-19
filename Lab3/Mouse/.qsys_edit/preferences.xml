@@ -8,7 +8,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library,Library/Interface Protocols/PCI Express/QSYS Example Designs,Library/Processors and Peripherals,Library/Processors and Peripherals/Peripherals,Library/Interface Protocols/PCI Express,Library/Interface Protocols" />
- <window width="1936" height="1048" x="-8" y="-8" />
+   expandedCategories="Library/Processors and Peripherals/Co-Processors,Library/Processors and Peripherals,Library/DSP,Library,Project,Library/DSP/Primitive DSP,Library/Processors and Peripherals/Co-Processors/Nios II Custom Instructions" />
+ <window width="1920" height="1032" x="0" y="0" />
  <generation path="laincore" />
 </preferences>

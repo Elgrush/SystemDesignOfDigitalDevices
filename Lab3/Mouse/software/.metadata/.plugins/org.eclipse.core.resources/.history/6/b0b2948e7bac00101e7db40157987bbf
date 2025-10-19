@@ -1,0 +1,19 @@
+/*
+ * mouse.c
+ *
+ *  Created on: 19 окт. 2025 г.
+ *      Author: Elgrush
+ */
+
+#include "mouse.h"
+
+int mouse_innit(alt_up_ps2_dev* ps2) {
+	ps2 = alt_up_ps2_open_dev("ps2_0");
+	return ps2 == NULL;
+}
+
+void ps2_read (alt_up_ps2_dev* ps2, unsigned char* buff) { // buff size = 40
+	for(int i = 32; i >= 0; i -= 8) {
+		alt_up_ps2_read_data_byte_timeout(ps2, buff+i);
+	}
+}

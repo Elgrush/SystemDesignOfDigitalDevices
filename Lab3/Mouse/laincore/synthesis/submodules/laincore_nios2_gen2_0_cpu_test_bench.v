@@ -47,6 +47,7 @@ module laincore_nios2_gen2_0_cpu_test_bench (
                                                W_estatus_reg,
                                                W_exception_reg,
                                                W_iw,
+                                               W_iw_custom_n,
                                                W_iw_op,
                                                W_iw_opx,
                                                W_pcb,
@@ -100,7 +101,7 @@ module laincore_nios2_gen2_0_cpu_test_bench (
   input   [  1: 0] M_bht_wr_data_unfiltered;
   input            M_bht_wr_en_unfiltered;
   input   [ 30: 0] M_mem_baddr;
-  input   [ 12: 0] M_target_pcb;
+  input   [ 29: 0] M_target_pcb;
   input            M_valid;
   input   [ 31: 0] W_badaddr_reg;
   input   [ 31: 0] W_bstatus_reg;
@@ -108,12 +109,13 @@ module laincore_nios2_gen2_0_cpu_test_bench (
   input   [ 31: 0] W_estatus_reg;
   input   [ 31: 0] W_exception_reg;
   input   [ 31: 0] W_iw;
+  input   [  7: 0] W_iw_custom_n;
   input   [  5: 0] W_iw_op;
   input   [  5: 0] W_iw_opx;
-  input   [ 12: 0] W_pcb;
+  input   [ 29: 0] W_pcb;
   input   [ 31: 0] W_status_reg;
   input            W_valid;
-  input   [ 71: 0] W_vinst;
+  input   [303: 0] W_vinst;
   input            W_wr_dst_reg;
   input            clk;
   input   [ 30: 0] d_address;
@@ -121,7 +123,7 @@ module laincore_nios2_gen2_0_cpu_test_bench (
   input            d_read;
   input            d_readdatavalid;
   input            d_write;
-  input   [ 12: 0] i_address;
+  input   [ 29: 0] i_address;
   input            i_read;
   input            i_readdatavalid;
   input            reset_n;
@@ -129,7 +131,7 @@ module laincore_nios2_gen2_0_cpu_test_bench (
 
 wire             A_iw_invalid;
 reg     [ 30: 0] A_mem_baddr;
-reg     [ 12: 0] A_target_pcb;
+reg     [ 29: 0] A_target_pcb;
 wire    [ 31: 0] A_wr_data_filtered;
 wire             A_wr_data_unfiltered_0_is_x;
 wire             A_wr_data_unfiltered_10_is_x;
@@ -245,6 +247,8 @@ wire             W_op_mulxss;
 wire             W_op_mulxsu;
 wire             W_op_mulxuu;
 wire             W_op_nextpc;
+wire             W_op_nios_custom_instr_floating_point_2_0;
+wire             W_op_nios_custom_instr_floating_point_2_0_1;
 wire             W_op_nor;
 wire             W_op_op_rsv02;
 wire             W_op_op_rsv09;
@@ -312,7 +316,7 @@ wire             W_op_xor;
 wire             W_op_xorhi;
 wire             W_op_xori;
 reg     [ 31: 0] W_st_data;
-reg     [ 12: 0] W_target_pcb;
+reg     [ 29: 0] W_target_pcb;
 reg              W_valid_crst;
 reg              W_valid_hbreak;
 reg              W_valid_intr;
@@ -445,6 +449,8 @@ wire             test_has_ended;
   assign W_op_intr = (W_iw_opx == 61) & W_is_opx_inst;
   assign W_op_crst = (W_iw_opx == 62) & W_is_opx_inst;
   assign W_op_opx_rsv63 = (W_iw_opx == 63) & W_is_opx_inst;
+  assign W_op_nios_custom_instr_floating_point_2_0 = W_op_custom & ({W_iw_custom_n[7 : 4] , 4'b0} == 8'he0);
+  assign W_op_nios_custom_instr_floating_point_2_0_1 = W_op_custom & ({W_iw_custom_n[7 : 3] , 3'b0} == 8'hf8);
   assign W_is_opx_inst = W_iw_op == 58;
   always @(posedge clk or negedge reset_n)
     begin
