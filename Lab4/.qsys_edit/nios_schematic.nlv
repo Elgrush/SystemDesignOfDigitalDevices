@@ -1,0 +1,21 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst nios -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst nios.nios2_qsys -pg 1 -lvl 2 -y 110
+preplace inst nios.ram -pg 1 -lvl 3 -y 230
+preplace inst nios.sw_in -pg 1 -lvl 3 -y 310
+preplace inst nios.reg32_avalon_interface_0 -pg 1 -lvl 3 -y 410
+preplace inst nios.led_out -pg 1 -lvl 3 -y 510
+preplace inst nios.jtag_uart -pg 1 -lvl 3 -y 30
+preplace inst nios.clk -pg 1 -lvl 1 -y 160
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.to_hex,(SLAVE)reg32_avalon_interface_0.conduit_end) 1 0 3 NJ 480 NJ 480 NJ
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)nios.reset,(SLAVE)clk.clk_in_reset) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>nios</net_container>(SLAVE)sw_in.reset,(SLAVE)nios2_qsys.reset_n,(SLAVE)reg32_avalon_interface_0.clock_reset,(SLAVE)ram.reset1,(MASTER)clk.clk_reset,(SLAVE)led_out.reset,(MASTER)nios2_qsys.jtag_debug_module_reset,(SLAVE)jtag_uart.reset) 1 1 2 290 560 620
+preplace netloc FAN_OUT<net_container>nios</net_container>(SLAVE)led_out.clk,(MASTER)clk.clk,(SLAVE)reg32_avalon_interface_0.clock_sink,(SLAVE)jtag_uart.clk,(SLAVE)nios2_qsys.clk,(SLAVE)sw_in.clk,(SLAVE)ram.clk1) 1 1 2 270 500 600
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)led_out.external_connection,(SLAVE)nios.led_out) 1 0 3 NJ 540 NJ 540 NJ
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)sw_in.external_connection,(SLAVE)nios.sw_in) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc INTERCONNECT<net_container>nios</net_container>(SLAVE)sw_in.s1,(MASTER)nios2_qsys.data_master,(SLAVE)ram.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)reg32_avalon_interface_0.avalon_slave_0,(SLAVE)nios2_qsys.jtag_debug_module,(SLAVE)led_out.s1,(MASTER)nios2_qsys.instruction_master) 1 1 2 310 580 560
+preplace netloc EXPORT<net_container>nios</net_container>(SLAVE)clk.clk_in,(SLAVE)nios.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>nios</net_container>(MASTER)nios2_qsys.d_irq,(SLAVE)jtag_uart.irq) 1 2 1 580
+levelinfo -pg 1 0 60 850
+levelinfo -hier nios 70 100 340 690 840
