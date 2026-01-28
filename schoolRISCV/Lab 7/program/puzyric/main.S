@@ -1,24 +1,48 @@
 # RISC-V puzyric
 #
-# Stanislav Zhelnio, 2020
-#
 
             .text
 
-start:      mv    t0, zero
-            li    t1, 1
-            mv    a0, t1
-            mv    a2, zero #0000067F
-            lw    a2, 1(zero)
-            sw    a2, 0(zero)
-            slli  a2, a2, 24
-            srli  a2, a2, 24
-fibonacci:  add   t0, t0, t1
-            mv    a0, t0
-            add   t1, t0, t1
-            mv    a0, t1
-            addi  a2, a2, -1
-            beqz  a2,  out
-            beqz  zero fibonacci
-out:        mv t1, a0 #0005107F
+start:      
+            lw      s4, 0(zero)
+            addi    s4, s4, -1  # Кол-во циклов
+            li      s1, 0
+            li      s3, 1       # Начальная точка массива
+
+main_cycle: 
+            bnez    s1, skip_setup
+            li      s1, 1       # Не выйти за левую грань
+skip_setup:
+            add     s2, s3, s1 # Адрес правого
+            lw      s5,  0(s2)
+            lw      s6, -1(s2)
+            addi    a1, s5, 0
+            addi    a0, s6, 0
+            beqz    zero, right_lesser_then_left
+after_cpr:
+            beqz    a0, end_of_iteration
+            sw      s5, -1(s2)
+            sw      s6,  0(s2)
+end_of_iteration:
+            addi    s1, s1, 1
+            sub     t0, s1, s4
+            beqz    t0, out
+            beqz    zero, main_cycle
+
+right_lesser_then_left:
+            beqz     a1, right_lesser_no
+            beqz     a0, right_lesser_yes
+            srli     a1, a1, 1
+            srli     a0, a0, 1
+            beqz     zero, after_cpr
+right_lesser_yes:
+            li      a0, 1
+            beqz    zero, after_cpr
+right_lesser_no:
+            li      a0, 0
+            beqz    zero, after_cpr
+
+out:
+            li      t0, 1
+            sw      t0, 0(zero)
             
