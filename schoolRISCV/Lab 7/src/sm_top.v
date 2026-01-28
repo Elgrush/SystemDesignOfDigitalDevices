@@ -21,9 +21,8 @@ module sm_top
 
     output  [31:0 ] lsaddr,
     input   [31:0 ] lvalue,
-    input           lvalid,
     output  [31:0 ] svalue,
-    output          sready
+    output          writeEn
 
 );
     //metastability input filters
@@ -61,7 +60,8 @@ module sm_top
         .imData     ( imData    ),
         .lsaddr     ( lsaddr    ),
         .lvalue     ( lvalue    ),
-        .svalue     ( svalue    )
+        .svalue     ( svalue    ),
+        .store      ( writeEn   )
     );
 
 endmodule

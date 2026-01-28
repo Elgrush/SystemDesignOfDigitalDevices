@@ -197,24 +197,32 @@ module de1_soc(
     wire [  3:0 ] clkDivide =  SW [8:5];
     wire [  4:0 ] regAddr   =  SW [4:0];
     wire [ 31:0 ] regData;
+    wire [ 31:0 ] lsaddr;
+    wire [ 31:0 ] lvalue;
+    wire [ 31:0 ] svalue;
+    wire          writeEnCpu;
 
     //cores
     sm_top sm_top
     (
-        .clkIn      ( clkIn     ),
-        .rst_n      ( rst_n     ),
-        .clkDivide  ( clkDivide ),
-        .clkEnable  ( clkEnable ),
-        .clk        ( clk       ),
-        .regAddr    ( regAddr   ),
-        .regData    ( regData   )
+        .clkIn      ( clkIn      ),
+        .rst_n      ( rst_n      ),
+        .clkDivide  ( clkDivide  ),
+        .clkEnable  ( clkEnable  ),
+        .clk        ( clk        ),
+        .regAddr    ( regAddr    ),
+        .regData    ( regData    ),
+        .lsaddr     ( lsaddr     ),
+        .lvalue     ( lvalue     ),
+        .svalue     ( svalue     ),
+        .writeEn    ( writeEnCpu )
     );
 
     //outputs
     assign LEDR[0]   = clk;
     assign LEDR[9:1] = regData[8:0];
 
-    wire [ 31:0 ] h7segment = regData;
+    wire [ 31:0 ] h7segment;
 
     sm_hex_display digit_5 ( h7segment [23:20] , HEX5 [6:0] );
     sm_hex_display digit_4 ( h7segment [19:16] , HEX4 [6:0] );
@@ -222,5 +230,26 @@ module de1_soc(
     sm_hex_display digit_2 ( h7segment [11: 8] , HEX2 [6:0] );
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
     sm_hex_display digit_0 ( h7segment [ 3: 0] , HEX0 [6:0] );
+
+    ram #(
+        .ADDR_WIDTH(6),
+        .BYTE_WIDTH(8),
+        .BATCH_WIDTH(4)
+    ) coupled_ram (
+        .clk_i(clkIn),
+
+        .addr_a(lsaddr),
+        .data_a(lvalue),
+        .write_a(svalue),
+        .byte_en_a(4'hf),
+        .write_en_a(writeEnCpu),
+
+        .addr_b(regAddr),
+        .data_b(h7segment),
+        .write_b(),
+        .byte_en_b(),
+        .write_en_b(1'b0)
+
+    );
 
 endmodule
