@@ -244,7 +244,7 @@ module de1_soc(
         .byte_en_a(4'hf),
         .write_en_a(writeEnCpu),
 
-        .addr_b(regAddr),
+        .addr_b({2'h0, regAddr}),
         .data_b(h7segment),
         .write_b(),
         .byte_en_b(),

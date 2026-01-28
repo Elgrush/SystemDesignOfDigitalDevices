@@ -113,6 +113,8 @@ module sr_cpu
         end
     end
 
+    assign svalue = rs2;
+
     //debug register access
     assign regData = (regAddr != 0) ? rd0 : pc;
 

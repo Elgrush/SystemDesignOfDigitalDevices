@@ -9,9 +9,9 @@
 2 16 sm_register_file 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 52 0
 2 6 sr_alu 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 59 0
 2 10 sr_control 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 184 0
-1 6 sr_cpu 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 131072 0 226 0
+2 6 sr_cpu 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 131072 0 229 0
 2 6 sm_top 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 59 0
 2 14 sm_hex_display 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 41 0
 2 3 ram 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 131072 0 276 0
-2 7 de1_soc 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 117 0
+1 7 de1_soc 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 121 0
 2 2 tb 4 fast 70 /mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7/work 0 0 0 0 50 0
