@@ -61,7 +61,7 @@ module sm_top
         .lsaddr     ( lsaddr    ),
         .lvalue     ( lvalue    ),
         .svalue     ( svalue    ),
-        .store      ( writeEn   )
+        .storeValid ( writeEn   )
     );
 
 endmodule

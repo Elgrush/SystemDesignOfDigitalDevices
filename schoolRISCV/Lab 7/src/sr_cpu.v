@@ -21,8 +21,8 @@ module sr_cpu
 
     output reg [31:0 ] lsaddr,
     input      [31:0 ] lvalue,
-    output     [31:0 ] svalue, 
-    output             store
+    output reg [31:0 ] svalue, 
+    output             storeValid
 );
     //control wires
     wire        aluZero;
@@ -32,6 +32,7 @@ module sr_cpu
     wire  [1:0] wdSrc;
     wire  [2:0] aluControl;
     wire        load;
+    wire        store;
 
     //instruction decode wires
     wire [ 6:0] cmdOp;
@@ -90,30 +91,31 @@ module sr_cpu
         .we3        ( regWrite     )
     );
 
-    reg loadDone;
+    reg lsDone;
+    assign storeValid = store && lsDone;
 
     always @(posedge clk or negedge rst_n) begin : laddr_ctrl
         if(!rst_n) begin
-            loadDone <= 1'b0;
+            lsDone <= 1'b0;
         end else begin
-            loadDone <= 1'b0;
-            if(load && !loadDone) begin
-                loadDone <= 1'b1;
+            lsDone <= 1'b0;
+            if((load || store) && !lsDone) begin
+                lsDone <= 1'b1;
             end
         end
     end
 
     always @(*) begin
         lsaddr = 0;
+        svalue = 0;
         if(load) begin
-            lsaddr = rs1+immI;
+            lsaddr = rd1+immI[11:0];
         end
         if(store) begin
-            lsaddr = rs1+immS;
+            lsaddr = rd1+immS;
+            svalue = rd2;
         end
     end
-
-    assign svalue = rs2;
 
     //debug register access
     assign regData = (regAddr != 0) ? rd0 : pc;
@@ -160,7 +162,7 @@ module sr_cpu
         .wdSrc      ( wdSrc        ),
         .aluControl ( aluControl   ),
         .load       ( load         ),
-        .loadDone   ( loadDone     ),
+        .lsDone     ( lsDone       ),
         .store      ( store        )
     );
 
@@ -228,7 +230,7 @@ module sr_control
     output reg [1:0] wdSrc,
     output reg [2:0] aluControl,
 
-    input            loadDone,
+    input            lsDone,
     output reg       load,
     output reg       store
 );
@@ -275,8 +277,8 @@ module sr_control
             { `RVF7_SLLI, `RVF3_SLLI, `RVOP_SLLI } : begin regWrite = 1'b1; aluSrc = 1'b1; aluControl = `ALU_SLL; end
             { `RVF7_ANY,  `RVF3_JARL, `RVOP_JARL } : begin regWrite = 1'b1; wdSrc = `WD_PC4_SRC; jump = 1'b1; aluSrc = 1'b1; aluControl = `ALU_ADD; end
             { `RVF7_ANY,  `RVF3_ANY,  `RVOP_LUI  } : begin regWrite = 1'b1; wdSrc = `WD_IMMU_SRC; end
-            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_LW   } : begin regWrite = loadDone; wdSrc = `WD_LW_SRC; if(!loadDone) pc_hold = 1'b1; load = 1'b1; end
-            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_SW   } : begin store = 1'b1; end
+            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_LW   } : begin regWrite = lsDone; wdSrc = `WD_LW_SRC; if(!lsDone) pc_hold = 1'b1; load = 1'b1; end
+            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_SW   } : begin store = 1'b1; if(!lsDone) pc_hold = 1'b1; end
 
             { `RVF7_ANY,  `RVF3_BEQ,  `RVOP_BEQ  } : begin branch = 1'b1; condZero = 1'b1; aluControl = `ALU_SUB; end
             { `RVF7_ANY,  `RVF3_BNE,  `RVOP_BNE  } : begin branch = 1'b1; aluControl = `ALU_SUB; end

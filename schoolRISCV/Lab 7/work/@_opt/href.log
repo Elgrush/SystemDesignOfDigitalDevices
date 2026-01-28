@@ -1,0 +1,3 @@
+BEGIN 1:ram:fast:work
+    ram :  1:tb:fast:work
+END 

@@ -33,8 +33,18 @@ module tb ();
         #6 key[0] = 1'b1;  // reset
     end
 
+    int i = 2;
     initial begin
-        #1_000 $finish;
+        #1_000_000
+        assert (dut.coupled_ram.ram[0] == -1)        // expression to be checked
+        else                               // (optional) custom error message
+            $error("Design not finished!");
+        for(; i < 64; i = i+1) begin
+            assert (dut.coupled_ram.ram[i] >= dut.coupled_ram.ram[i-1])        // expression to be checked
+            else                               // (optional) custom error message
+                $error("%h at %d < %h at %d\n", dut.coupled_ram.ram[i], i, dut.coupled_ram.ram[i-1], i-1);
+        end
+        $finish;
     end
 
 endmodule
