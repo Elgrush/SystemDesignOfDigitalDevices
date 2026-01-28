@@ -80,7 +80,6 @@ module sr_cpu
 
     sm_register_file rf (
         .clk        ( clk          ),
-        .a1         ( regAddr      ),
         .a1         ( rs1          ),
         .a2         ( rs2          ),
         .a3         ( rd           ),
