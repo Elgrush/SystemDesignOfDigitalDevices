@@ -1,0 +1,402 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/mnt/g/CodingSpace/SystemDesignOfDigitalDevices/schoolRISCV/Lab 7
+T_opt1
+!i145 1
+!i144 0
+!s110 1769600291
+Vz^R0gbS6HH^E?MN6G`T3l2
+04 2 4 work tb fast 0
+=1-00155dd63c38-6979f522-f07f5-197c
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U22 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt1
+OL;O;2025.2;82
+R1
+vde1_soc
+Z3 2src/sr_cpu.vh|src/ram.sv|src/sm_hex_display.v|src/sm_register.v|src/sm_rom.v|src/sr_cpu.v|src/sm_top.v|board/de1_soc/de1_soc.v|tb.sv
+Z4 !s110 1769600522
+!i10b 1
+!s100 m5ZZ95NXQZa[n^3lAZZZB2
+I=4UB<jlZOgT_U_>13L<Sd2
+R1
+w1769593047
+8board/de1_soc/de1_soc.v
+Fboard/de1_soc/de1_soc.v
+!i122 13
+L0 22 234
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z7 !s108 1769600522.000000
+!s107 tb.sv|board/de1_soc/de1_soc.v|src/sm_top.v|src/sr_cpu.v|src/sm_rom.v|src/sm_register.v|src/sm_hex_display.v|src/ram.sv|src/sr_cpu.vh|
+Z8 !s90 -f|list.lst|-suppress|2367|
+!i113 0
+Z9 o-suppress 2367 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vram
+R3
+Z10 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+R4
+!i10b 1
+!s100 z3eGR:fz?Hj[L:ILRTOSk2
+IR=WWeg^CSIBRXnOWh@k@R0
+S1
+R1
+w1769600198
+8src/ram.sv
+Fsrc/ram.sv
+!i122 13
+L0 1 57
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z11 !s107 tb.sv|board/de1_soc/de1_soc.v|src/sm_top.v|src/sr_cpu.v|src/sm_rom.v|src/sm_register.v|src/sm_hex_display.v|src/ram.sv|src/sr_cpu.vh|
+R8
+!i113 0
+R9
+R2
+vsm_clk_divider
+R3
+R4
+!i10b 1
+!s100 `4ok=@mA1h4RVh[R[`lG23
+IZd0E^L5Pm[B>_NC?^Fo]X1
+R1
+Z12 w1769590405
+Z13 8src/sm_top.v
+Z14 Fsrc/sm_top.v
+!i122 13
+L0 89 19
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_debouncer
+R3
+R4
+!i10b 1
+!s100 W_POe[3Y7ab`fQJ[0SAoU3
+I6mVh2mZA:bN<7BQe?@4W23
+R1
+R12
+R13
+R14
+!i122 13
+L0 70 17
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_hex_display
+R3
+R4
+!i10b 1
+!s100 QXBCPggd4ie@==oz:21M21
+I=XZ?MHjn=1CK8R9]kBDCH2
+R1
+Z15 w1765632481
+Z16 8src/sm_hex_display.v
+Z17 Fsrc/sm_hex_display.v
+!i122 13
+L0 11 27
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_hex_display_8
+R3
+R4
+!i10b 1
+!s100 NaQW=L]<J^T>NMWK:?W0?1
+IeMaDobZ[nYmLf1d5HX7M21
+R1
+R15
+R16
+R17
+!i122 13
+L0 41 57
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_register
+R3
+R4
+!i10b 1
+!s100 3DGgbLWW;7KcLhm:gFLg>1
+I=:;VJi5fGh]zeibQ?7^130
+R1
+R15
+Z18 8src/sm_register.v
+Z19 Fsrc/sm_register.v
+!i122 13
+L0 11 13
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_register_file
+R3
+R4
+!i10b 1
+!s100 <OiMGPRhbF7XR5>0[gX@n1
+ITd5cai>CfO0Yf?im2GKT41
+R1
+Z20 w1769600286
+Z21 8src/sr_cpu.v
+Z22 Fsrc/sr_cpu.v
+!i122 13
+L0 308 22
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_register_we
+R3
+R4
+!i10b 1
+!s100 K`4oZbmV:[BNIlalJVPa<2
+ImiVK<G;9W>z7_TEK?ki2b1
+R1
+R15
+R18
+R19
+!i122 13
+L0 26 14
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_rom
+R3
+R4
+!i10b 1
+!s100 zD2C8B>:DRNRNFh[5gQ=Q3
+IkMPO1K_2P1o@CR[[HJ?YQ1
+R1
+R15
+8src/sm_rom.v
+Fsrc/sm_rom.v
+!i122 13
+L0 11 16
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsm_top
+R3
+R4
+!i10b 1
+!s100 Y==3dQhVQ[]T]dl`U`9]H1
+IM6[RPkAm?gOcQoCY36XY12
+R1
+R12
+R13
+R14
+!i122 13
+L0 12 56
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsr_alu
+R3
+R4
+!i10b 1
+!s100 fmh?c>1i9dn5;>ZMnmHjL2
+ICZ>]S;Gjl74GzQ0>VS[`03
+R1
+R20
+R21
+R22
+!i122 13
+L0 284 23
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsr_control
+R3
+R4
+!i10b 1
+!s100 PYUL3XHnR^z8o^C038>[M3
+IZZI5e4=UHa_HQbmCeKN690
+R1
+R20
+R21
+R22
+!i122 13
+L0 216 67
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsr_cpu
+R3
+R4
+!i10b 1
+!s100 EZJ7^_Nm4NW4LQI5?4[cK3
+IXgC;`I1:SS4h9AAKJOSmU2
+R1
+R20
+R21
+R22
+!i122 13
+L0 13 152
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vsr_decode
+R3
+R4
+!i10b 1
+!s100 c]_zeY16DYB2eJVL>`@O^2
+IGaU7`_>:ME[gnT[=8Qf6^0
+R1
+R20
+R21
+R22
+!i122 13
+L0 166 49
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2
+vtb
+R3
+R10
+R4
+!i10b 1
+!s100 8<hgKLimZ<8W4>EcQ1ml:2
+Il^XYiSGS`n4`X<K^aX8zT2
+S1
+R1
+w1769598171
+8tb.sv
+Ftb.sv
+!i122 13
+L0 1 32
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R2

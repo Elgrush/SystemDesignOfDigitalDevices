@@ -1,0 +1,9 @@
+src/sr_cpu.vh
+src/ram.sv
+src/sm_hex_display.v
+src/sm_register.v
+src/sm_rom.v
+src/sr_cpu.v
+src/sm_top.v
+board/de1_soc/de1_soc.v
+tb.sv

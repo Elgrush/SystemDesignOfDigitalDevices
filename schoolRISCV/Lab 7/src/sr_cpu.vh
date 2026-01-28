@@ -30,8 +30,6 @@
 `define RVOP_ADDI         `RVOP_I
 `define RVOP_BEQ          `RVOP_BRANCH
 `define RVOP_LUI          `RVOP_LU
-`define RVOP_LW           `RVOP_LW
-`define RVOP_SW           `RVOP_SW
 `define RVOP_BNE          `RVOP_BRANCH
 `define RVOP_ADD          `RVOP_R
 `define RVOP_OR           `RVOP_R
@@ -76,7 +74,7 @@
 `define PC_PC4_SRC    2'b00
 `define PC_BRANCH_SRC 2'b01
 `define PC_ALU_SRC    2'b10
-`define PC_ALU_HOLD   2'b11
+`define PC_HOLD       2'b11
 
 `define WD_ALU_SRC    2'b00
 `define WD_IMMU_SRC   2'b01

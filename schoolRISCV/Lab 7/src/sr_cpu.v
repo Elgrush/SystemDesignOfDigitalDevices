@@ -19,7 +19,7 @@ module sr_cpu
     output      [31:0]  imAddr,     // instruction memory address
     input       [31:0]  imData,      // instruction memory data
 
-    output reg [31:0 ] addr,
+    output reg [31:0 ] lsaddr,
     input      [31:0 ] lvalue,
     output     [31:0 ] svalue, 
     output             store
@@ -104,12 +104,12 @@ module sr_cpu
     end
 
     always @(*) begin
-        addr = 0;
+        lsaddr = 0;
         if(load) begin
-            addr = rs1+immU;
+            lsaddr = rs1+immU;
         end
         if(store) begin
-            addr = rs1+immS;
+            lsaddr = rs1+immS;
         end
     end
 
@@ -231,7 +231,7 @@ module sr_control
 );
     reg          branch;
     reg          jump;
-    reg          hold;
+    reg          pc_hold;
     reg          condZero;
 
     always @ (*) begin
@@ -242,7 +242,7 @@ module sr_control
         if(jump) begin
             pcSrc = `PC_ALU_SRC;
         end
-        if(hold) begin
+        if(pc_hold) begin
             pcSrc = `PC_HOLD;
         end
     end

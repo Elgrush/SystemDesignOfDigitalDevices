@@ -51,7 +51,7 @@ always @( posedge clk_i ) begin : ram_b
 end
 
 initial begin
-        $readmemh ("memory.hex", rom);
+        $readmemh ("memory.hex", ram);
     end
 
 endmodule: ram
