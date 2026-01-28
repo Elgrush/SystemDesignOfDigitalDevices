@@ -88,7 +88,7 @@ endmodule
 //tunable clock divider
 module sm_clk_divider
 #(
-    parameter shift  = 16,
+    parameter shift  = 0,
               bypass = 0
 )
 (

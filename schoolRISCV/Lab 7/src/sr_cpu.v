@@ -106,7 +106,7 @@ module sr_cpu
     always @(*) begin
         lsaddr = 0;
         if(load) begin
-            lsaddr = rs1+immU;
+            lsaddr = rs1+immI;
         end
         if(store) begin
             lsaddr = rs1+immS;
@@ -158,6 +158,7 @@ module sr_cpu
         .wdSrc      ( wdSrc        ),
         .aluControl ( aluControl   ),
         .load       ( load         ),
+        .loadDone   ( loadDone     ),
         .store      ( store        )
     );
 

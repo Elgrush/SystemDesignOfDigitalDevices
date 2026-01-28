@@ -236,7 +236,7 @@ module de1_soc(
         .BYTE_WIDTH(8),
         .BATCH_WIDTH(4)
     ) coupled_ram (
-        .clk_i(clkIn),
+        .clk_i(clk),
 
         .addr_a(lsaddr),
         .data_a(lvalue),

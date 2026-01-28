@@ -1,8 +1,8 @@
 module tb ();
     
-    logic clk = 1'b0;
-    logic [3:0] key;
-    logic [9:0] sw;
+    logic clk       = '0;
+    logic [3:0] key = '0;
+    logic [9:0] sw  = '0;
 
     logic      [6:0]  HEX0;
     logic      [6:0]  HEX1;
@@ -26,7 +26,15 @@ module tb ();
     always #1 clk = !clk;
 
     initial begin
-        #10_000 $finish;
+        sw[8:5]   = 4'h0;    // divide
+    end
+
+    initial begin
+        #6 key[0] = 1'b1;  // reset
+    end
+
+    initial begin
+        #1_000 $finish;
     end
 
 endmodule
