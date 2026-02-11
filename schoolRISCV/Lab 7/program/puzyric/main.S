@@ -46,4 +46,7 @@ set_zero:
 out:
             li      t0, -1
             sw      t0, 0(zero)
+
+fi:
+            beqz    zero, fi
             
