@@ -1090,6 +1090,11 @@
   <parameter name="baseAddress" value="0x5000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="avalon" version="17.1" start="mm_bridge_0.m0" end="gpio.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x6000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="17.1"

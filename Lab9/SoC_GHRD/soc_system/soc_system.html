@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2026.03.04.17:12:05</td>
+    <td class="l">2026.03.04.20:19:58</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -245,9 +245,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00006000</td>
     <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
-    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00006000</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff206000</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff206000</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -2257,10 +2257,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
+       <a href="#module_mm_bridge_0">mm_bridge_0</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="10">gpio</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
        <a href="#module_fpga_only_master">fpga_only_master</a>
       </td>
       <td class="from">master&#160;&#160;</td>
-      <td class="main" rowspan="7">gpio</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -30451,7 +30463,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_hps_0_bridges">hps_0_bridges</a>
       </td>
       <td class="from">h2f_lw&#160;&#160;</td>
-      <td class="main" rowspan="24">mm_bridge_0</td>
+      <td class="main" rowspan="27">mm_bridge_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s0</td>
@@ -30560,6 +30572,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">m0&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
        <a href="#module_button_pio">button_pio</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_gpio">gpio</a>
       </td>
      </tr>
      <tr>
@@ -30717,7 +30745,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1772629923</td>
+        <td class="parametervalue">1772641196</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -30742,7 +30770,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1772629923</td>
+        <td class="parametervalue">1772641196</td>
        </tr>
       </table>
      </td>
@@ -30751,8 +30779,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0,01 seconds</td>
-    <td class="r">rendering took 0,28 seconds</td>
+    <td class="l">generation took 0,02 seconds</td>
+    <td class="r">rendering took 0,27 seconds</td>
    </tr>
   </table>
  </body>

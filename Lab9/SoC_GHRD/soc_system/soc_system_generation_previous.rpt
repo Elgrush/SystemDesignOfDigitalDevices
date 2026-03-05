@@ -14,6 +14,8 @@ Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 17.1]
 Progress: Parameterizing module f2sdram_only_master
 Progress: Adding fpga_only_master [altera_jtag_avalon_master 17.1]
 Progress: Parameterizing module fpga_only_master
+Progress: Adding gpio [altera_avalon_pio 17.1]
+Progress: Parameterizing module gpio
 Progress: Adding hps_0 [altera_hps 17.1]
 Progress: Parameterizing module hps_0
 Progress: Adding hps_only_master [altera_jtag_avalon_master 17.1]
@@ -24,8 +26,6 @@ Progress: Adding led_pio [altera_avalon_pio 17.1]
 Progress: Parameterizing module led_pio
 Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 17.1]
 Progress: Parameterizing module mm_bridge_0
-Progress: Adding pio_0 [altera_avalon_pio 17.1]
-Progress: Parameterizing module pio_0
 Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 17.1]
 Progress: Parameterizing module sysid_qsys
 Progress: Building connections
@@ -58,6 +58,8 @@ Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 17.1]
 Progress: Parameterizing module f2sdram_only_master
 Progress: Adding fpga_only_master [altera_jtag_avalon_master 17.1]
 Progress: Parameterizing module fpga_only_master
+Progress: Adding gpio [altera_avalon_pio 17.1]
+Progress: Parameterizing module gpio
 Progress: Adding hps_0 [altera_hps 17.1]
 Progress: Parameterizing module hps_0
 Progress: Adding hps_only_master [altera_jtag_avalon_master 17.1]
@@ -68,8 +70,6 @@ Progress: Adding led_pio [altera_avalon_pio 17.1]
 Progress: Parameterizing module led_pio
 Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 17.1]
 Progress: Parameterizing module mm_bridge_0
-Progress: Adding pio_0 [altera_avalon_pio 17.1]
-Progress: Parameterizing module pio_0
 Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 17.1]
 Progress: Parameterizing module sysid_qsys
 Progress: Building connections
@@ -96,31 +96,31 @@ Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
 Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
-Info: button_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0003_button_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0003_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0003_button_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0003_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
 Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
-Info: dipsw_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0004_dipsw_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0004_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: dipsw_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0004_dipsw_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0004_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
 Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
 Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
+Info: gpio: Starting RTL generation for module 'soc_system_gpio'
+Info: gpio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_gpio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0005_gpio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0005_gpio_gen//soc_system_gpio_component_configuration.pl  --do_build_sim=0  ]
+Info: gpio: Done RTL generation for module 'soc_system_gpio'
+Info: gpio: "soc_system" instantiated altera_avalon_pio "gpio"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0005_jtag_uart_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0005_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0006_jtag_uart_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0006_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
-Info: led_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0006_led_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0006_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0007_led_pio_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_8798333853816357908.dir/0007_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
 Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
 Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
-Info: pio_0: Starting RTL generation for module 'soc_system_pio_0'
-Info: pio_0:   Generation command is [exec E:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I E:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I E:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- E:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0008_pio_0_gen/ --quartus_dir=E:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/843E~1/AppData/Local/Temp/alt0516_580284537990565992.dir/0008_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
-Info: pio_0: Done RTL generation for module 'soc_system_pio_0'
-Info: pio_0: "soc_system" instantiated altera_avalon_pio "pio_0"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"

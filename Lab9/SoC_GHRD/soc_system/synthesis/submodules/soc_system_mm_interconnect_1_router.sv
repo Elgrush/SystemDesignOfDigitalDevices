@@ -139,7 +139,8 @@ module soc_system_mm_interconnect_1_router
     localparam PAD2 = log2ceil(64'h3010 - 64'h3000); 
     localparam PAD3 = log2ceil(64'h4010 - 64'h4000); 
     localparam PAD4 = log2ceil(64'h5010 - 64'h5000); 
-    localparam PAD5 = log2ceil(64'h30100 - 64'h30000); 
+    localparam PAD5 = log2ceil(64'h6010 - 64'h6000); 
+    localparam PAD6 = log2ceil(64'h30100 - 64'h30000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
@@ -200,37 +201,43 @@ module soc_system_mm_interconnect_1_router
 
     // ( 0x1000 .. 0x1008 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 18'h1000  && read_transaction  ) begin
-            src_channel = 7'b000100;
+            src_channel = 7'b0000100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
     end
 
     // ( 0x2000 .. 0x2008 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 18'h2000   ) begin
-            src_channel = 7'b000001;
+            src_channel = 7'b0000001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
     // ( 0x3000 .. 0x3010 )
     if ( {address[RG:PAD2],{PAD2{1'b0}}} == 18'h3000   ) begin
-            src_channel = 7'b001000;
+            src_channel = 7'b0001000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end
 
     // ( 0x4000 .. 0x4010 )
     if ( {address[RG:PAD3],{PAD3{1'b0}}} == 18'h4000   ) begin
-            src_channel = 7'b010000;
+            src_channel = 7'b0010000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x5000 .. 0x5010 )
     if ( {address[RG:PAD4],{PAD4{1'b0}}} == 18'h5000   ) begin
-            src_channel = 7'b100000;
+            src_channel = 7'b0100000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
+    // ( 0x6000 .. 0x6010 )
+    if ( {address[RG:PAD5],{PAD5{1'b0}}} == 18'h6000   ) begin
+            src_channel = 7'b1000000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+    end
+
     // ( 0x30000 .. 0x30100 )
-    if ( {address[RG:PAD5],{PAD5{1'b0}}} == 18'h30000   ) begin
-            src_channel = 7'b000010;
+    if ( {address[RG:PAD6],{PAD6{1'b0}}} == 18'h30000   ) begin
+            src_channel = 7'b0000010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 

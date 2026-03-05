@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2026.03.04.17:12:04 -->
+ <!-- 2026.03.04.20:19:57 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1772629923</value>
+  <value>1772641196</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -21882,6 +21882,14 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>button_pio.s1</name>
     <baseAddress>20480</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>gpio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>gpio.s1</name>
+    <baseAddress>24576</baseAddress>
     <span>16</span>
    </memoryBlock>
   </interface>
@@ -48797,6 +48805,14 @@ parameters are a RESULT of the module parameters. -->
     <baseAddress>20480</baseAddress>
     <span>16</span>
    </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>gpio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>gpio.s1</name>
+    <baseAddress>24576</baseAddress>
+    <span>16</span>
+   </memoryBlock>
   </interface>
   <interface name="f2h_axi_clock" kind="clock_sink" version="17.1">
    <!-- The connection points exposed by a module instance for the
@@ -50824,6 +50840,14 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>gpio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>gpio.s1</name>
+    <baseAddress>4280311808</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>hps_0_arm_gic_0</moduleName>
     <slaveName>axi_slave0</slaveName>
     <name>hps_0_arm_gic_0.axi_slave0</name>
@@ -51699,6 +51723,14 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>button_pio.s1</name>
     <baseAddress>4280307712</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>gpio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>gpio.s1</name>
+    <baseAddress>4280311808</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -82730,6 +82762,14 @@ parameters are a RESULT of the module parameters. -->
     <baseAddress>20480</baseAddress>
     <span>16</span>
    </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>gpio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>gpio.s1</name>
+    <baseAddress>24576</baseAddress>
+    <span>16</span>
+   </memoryBlock>
   </interface>
  </module>
  <module
@@ -82745,7 +82785,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1772629923</value>
+   <value>1772641196</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -82765,7 +82805,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1772629923</value>
+   <value>1772641196</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -82781,7 +82821,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1772629923</value>
+   <value>1772641196</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -93722,6 +93762,57 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
+   name="mm_bridge_0.m0/gpio.s1"
+   kind="avalon"
+   version="17.1"
+   start="mm_bridge_0.m0"
+   end="gpio.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x6000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>mm_bridge_0</startModule>
+  <startConnectionPoint>m0</startConnectionPoint>
+  <endModule>gpio</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
    name="fpga_only_master.master/jtag_uart.avalon_jtag_slave"
    kind="avalon"
    version="17.1"
@@ -95549,7 +95640,7 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <plugin>
-  <instanceCount>146</instanceCount>
+  <instanceCount>147</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
